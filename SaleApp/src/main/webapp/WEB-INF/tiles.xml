@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache
+Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name = "base" template="/WEB-INF/admin/layout/base.jsp">
+        <put-attribute name="title" value="Trang Chu" />
+        <put-attribute name="header" value="/WEB-INF/admin/layout/header.jsp"/>
+        <put-attribute name="setting-panel" value="/WEB-INF/admin/layout/setting-panel.jsp"/>
+        <put-attribute name="sidebar" value="/WEB-INF/admin/layout/sidebar.jsp"/>
+        <put-attribute name="body" value="WELCOME TO MY HOSPITAL" />
+        <put-attribute name="footer" value="/WEB-INF/admin/layout/footer.jsp"/>
+        <put-attribute name="head-plugin" value="Head-plugin" />
+        <put-attribute name="body-plugin" value="Body-plugin" />
+    </definition>
+    <definition name = "index" extends="base">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/index/index.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/index/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/index/body-plugin.jsp" />
+    </definition>
+
+<!--    Cac trang patients-->
+
+    <definition name = "patients" extends="base">
+        <put-attribute name="title" value="All patients" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/patients/patients.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/patients/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/patients/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "edit-patient" extends="base">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/edit-patient/edit-patient.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/edit-patient/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/edit-patient/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "add-patient" extends="base">
+        <put-attribute name="title" value="" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/add-patient/add-patient.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/add-patient/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/add-patient/body-plugin.jsp" />
+    </definition>
+
+<!--    Cac trang doctor-->
+
+    <definition name = "doctors" extends="base">
+        <put-attribute name="title" value="All doctors" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/doctors/doctors.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/doctors/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/doctors/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "add-doctor" extends="base">
+        <put-attribute name="title" value="Add doctors" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/add-doctor/add-doctor.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/add-doctor/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/add-doctor/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "edit-doctor" extends="base">
+        <put-attribute name="title" value="Add doctors" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/edit-doctor/edit-doctor.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/edit-doctor/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/edit-doctor/body-plugin.jsp" />
+    </definition>
+
+<!--    Trang Login & Sign Up-->
+    <definition name="login" template="/WEB-INF/admin/pages/login/login.jsp">
+        <put-attribute name="title" value="Welcome to our Hospital" />
+
+    </definition>
+</tiles-definitions>
