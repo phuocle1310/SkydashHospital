@@ -6,6 +6,7 @@
 package com.dht.controllers;
 
 
+import com.dht.service.IPatientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,9 +18,13 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Admin
  */
 @Controller
+@RequestMapping("/home")
 public class HomeController {
 
-    @RequestMapping("/")
+    @Autowired
+    private IPatientsService patientsService;
+
+    @RequestMapping()
     public String index() {
         return "index";
     }
@@ -31,40 +36,15 @@ public class HomeController {
      *
      */
 
-    @RequestMapping("/all-doctors")
-    public String alldoctors() {
-        return "doctors";
-    }
 
-    @RequestMapping("/edit-doctor")
-    public String editdoctor() {
-        return "edit-doctor";
-    }
-
-    @RequestMapping("/add-doctor")
-    public String adddoctor() {
-        return "add-doctor";
-    }
 
     /**
      *
      * Cac trang admin danh cho patients
      */
 
-    @RequestMapping("/all-patients")
-    public String allpatients() {
-        return "patients";
-    }
 
-    @RequestMapping("/edit-patient")
-    public String editpatient() {
-        return "edit-patient";
-    }
 
-    @RequestMapping("/add-patient")
-    public String addpatient() {
-        return "add-patient";
-    }
 
     /**
      *  Trang Login va Forgot password

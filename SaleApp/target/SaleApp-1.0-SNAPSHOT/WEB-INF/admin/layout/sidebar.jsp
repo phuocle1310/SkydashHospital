@@ -17,9 +17,9 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="/all-doctors">All Doctors</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/edit-doctor">Edit Doctor</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="<c:url value="/add-doctor"/>">Add Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/home/doctors">All Doctors</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/home/doctors/edit-doctor">Edit Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/home/doctors/add-doctor">Add Doctor</a></li>
                 </ul>
             </div>
         </li>
@@ -31,9 +31,9 @@
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/all-patients" /> ">All Patients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/edit-patient" /> ">Edit Patient</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/add-patient" /> ">Add Patient</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients" /> ">All Patients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/edit-patient" /> ">Edit Patient</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/add-patient" /> ">Add Patient</a></li>
                 </ul>
             </div>
         </li>

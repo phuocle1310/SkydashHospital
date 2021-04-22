@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
@@ -8,7 +10,7 @@
                         <p class="card-title">All Patients</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
+                        <a href="/patients/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
                     </div>
                 </div>
 
@@ -18,42 +20,48 @@
                             <table id="mytable" class="display expandable-table" style="width: 100%; text-align: center">
                                 <thead>
                                 <tr>
-                                    <th>item 1</th>
-                                    <th>item 2</th>
+                                    <th>Id</th>
+                                    <th>Name </th>
+                                    <th>Date of Birth</th>
+                                    <th>Gender</th>
+                                    <th>Images</th>
+                                    <th>Disease</th>
+                                    <th>Email</th>
+                                    <th>Phone nummber</th>
+                                    <th>Address</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>1</td>
+                                <c:forEach items="${patients}" var="patient">
+                                <tr id="patient${patient.id}">
+                                    <td>${patient.id}</td>
+                                    <td>${patient.name}</td>
+                                    <td>${patient.dateOfBirth}</td>
+                                    <td>${patient.gender}</td>
+                                    <td>${patient.image}</td>
+                                    <td>${patient.disease}</td>
+                                    <td>${patient.email}</td>
+                                    <td>${patient.phone}</td>
+                                    <td>${patient.address}</td>
                                     <td style="text-align: right">
                                         <div class="dropdown">
                                             <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="ti-settings"></i>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                <a class="dropdown-item" href="/edit-patient" >Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="/home/patients/edit-patient" >Edit</a>
+                                                <form action="/home/patients/${patient.id}" method="post">
+                                                    <button type="submit" class="dropdown-item">
+                                                    Delete
+                                                    </button>
+                                                </form>
+
                                             </div>
                                         </div>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>2</td>
-                                    <td style="text-align: right">
-                                        <div class="dropdown">
-                                            <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <i class="ti-settings"></i>
-                                            </button>
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                <a class="dropdown-item" href="/edit-patient" >Edit</a>
-                                                <a class="dropdown-item" href="#">Delete</a>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                </c:forEach>
 
                                 </tbody>
                             </table>
