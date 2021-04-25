@@ -29,4 +29,14 @@ public class PatientsServiceImplement implements IPatientsService {
     public boolean deletePatient(String patientId) {
         return this.patientsRepository.deletePatient(patientId);
     }
+
+    @Override
+    public boolean addPatient(Patient patient) {
+        return this.patientsRepository.addPatient(patient);
+    }
+
+    @Override
+    public boolean updatePatient(Patient patient) {
+        return this.patientsRepository.updatePatient(patient);
+    }
 }

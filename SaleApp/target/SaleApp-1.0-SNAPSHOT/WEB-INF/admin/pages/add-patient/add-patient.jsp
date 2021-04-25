@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
@@ -9,12 +10,13 @@
                 <p class="card-description">
                     Patient Info
                 </p>
+                <form:form method="post" modelAttribute="addpatient" cssClass="form-sample">
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <form:input type="text" cssClass="form-control" path="name" />
                             </div>
                         </div>
                     </div>
@@ -22,7 +24,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date of Birth</label>
                             <div class="col-sm-9">
-                                <input type="date" class="form-control datepicker"/>
+                                <form:input type="date" cssClass="form-control" path="dateOfBirth"/>
                             </div>
                         </div>
                     </div>
@@ -32,7 +34,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <form:input type="text" cssClass="form-control" path="email"/>
                             </div>
                         </div>
                     </div>
@@ -40,7 +42,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Phone Number</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <form:input type="text" cssClass="form-control" path="phone"/>
                             </div>
                         </div>
                     </div>
@@ -50,7 +52,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Address</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" />
+                                <form:input type="text" cssClass="form-control" path="address"/>
                             </div>
                         </div>
                     </div>
@@ -60,7 +62,10 @@
                             <div class="col-sm-4">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios1" value="" checked>
+                                        <form:radiobutton cssClass="form-check-input"
+                                                          name="membershipRadios"
+                                                          id="membershipRadios1"
+                                                          value="Male" checked="true" path="gender"/>
                                         Male
                                     </label>
                                 </div>
@@ -68,7 +73,8 @@
                             <div class="col-sm-5">
                                 <div class="form-check">
                                     <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios" id="membershipRadios2" value="option2">
+                                        <form:radiobutton cssClass="form-check-input" name="membershipRadios"
+                                                          id="membershipRadios2" value="Female" path="gender"/>
                                         Female
                                     </label>
                                 </div>
@@ -76,47 +82,47 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">User Name</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Password</label>
-                            <div class="col-sm-9">
-                                <input type="password" class="form-control" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Status</label>
-                            <div class="col-sm-4">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios3" value="" checked>
-                                        Active
-                                    </label>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="form-check">
-                                    <label class="form-check-label">
-                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios4" value="option2">
-                                        Inactive
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<%--                <div class="row">--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="form-group row">--%>
+<%--                            <label class="col-sm-3 col-form-label">User Name</label>--%>
+<%--                            <div class="col-sm-9">--%>
+<%--                                <input type="text" class="form-control" />--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="form-group row">--%>
+<%--                            <label class="col-sm-3 col-form-label">Password</label>--%>
+<%--                            <div class="col-sm-9">--%>
+<%--                                <input type="password" class="form-control" />--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--                <div class="row">--%>
+<%--                    <div class="col-md-6">--%>
+<%--                        <div class="form-group row">--%>
+<%--                            <label class="col-sm-3 col-form-label">Status</label>--%>
+<%--                            <div class="col-sm-4">--%>
+<%--                                <div class="form-check">--%>
+<%--                                    <label class="form-check-label">--%>
+<%--                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios3" value="" checked>--%>
+<%--                                        Active--%>
+<%--                                    </label>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="col-sm-5">--%>
+<%--                                <div class="form-check">--%>
+<%--                                    <label class="form-check-label">--%>
+<%--                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios4" value="option2">--%>
+<%--                                        Inactive--%>
+<%--                                    </label>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
                 <div class="row">
                     <div class="col-sm-12 text-right">
                         <button type="submit" class="btn btn-outline-primary">
@@ -127,7 +133,7 @@
                         </button>
                     </div>
                 </div>
-
+                </form:form>
             </form>
         </div>
     </div>

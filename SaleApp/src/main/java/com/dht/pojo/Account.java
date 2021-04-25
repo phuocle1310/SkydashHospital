@@ -14,10 +14,10 @@ public class Account implements Serializable {
     private String role;
     private boolean active;
 
-    @OneToOne
-    @MapsId
-    @JoinColumn(name = "id")
-    private Patient patient;
+//    @OneToOne
+//    @MapsId
+//    @JoinColumn(name = "id")
+//    private Patient patient;
 
     @OneToOne
     @MapsId
@@ -65,13 +65,13 @@ public class Account implements Serializable {
         this.active = active;
     }
 
-    public Patient getPatient() {
-        return patient;
-    }
-
-    public void setPatient(Patient patient) {
-        this.patient = patient;
-    }
+//    public Patient getPatient() {
+//        return patient;
+//    }
+//
+//    public void setPatient(Patient patient) {
+//        this.patient = patient;
+//    }
 
     public Doctor getDoctor() {
         return doctor;

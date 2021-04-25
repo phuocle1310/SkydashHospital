@@ -8,4 +8,6 @@ public interface IPatientsRepository {
     List<Patient> getAllPatient();
     Patient getPatientById(String id);
     boolean deletePatient(String patientId);
+    boolean addPatient(Patient patient);
+    boolean updatePatient(Patient patient);
 }

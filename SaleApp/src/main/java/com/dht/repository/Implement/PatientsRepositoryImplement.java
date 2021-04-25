@@ -13,6 +13,7 @@ import javax.persistence.Query;
 import javax.persistence.criteria.CriteriaBuilder;
 
 import java.util.List;
+import java.util.UUID;
 
 @Repository
 public class PatientsRepositoryImplement implements IPatientsRepository {
@@ -48,6 +49,33 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
             ex.printStackTrace();
         }
 
+        return false;
+    }
+
+    @Override
+    @Transactional
+    public boolean updatePatient(Patient patient) {
+        Session s = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            if (patient.getId() != null)
+                s.update(patient);
+            return true;
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
+
+    @Override
+    @Transactional
+    public boolean addPatient(Patient patient) {
+        Session s = this.sessionFactory.getObject().getCurrentSession();
+        try {
+            if(patient.getId() == null)
+                s.save(patient);
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
         return false;
     }
 

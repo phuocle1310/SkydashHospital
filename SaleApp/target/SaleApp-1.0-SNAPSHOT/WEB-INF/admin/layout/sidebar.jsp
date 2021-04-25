@@ -32,7 +32,7 @@
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients" /> ">All Patients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/edit-patient" /> ">Edit Patient</a></li>
+<%--                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/edit-patient" /> ">Edit Patient</a></li>--%>
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/add-patient" /> ">Add Patient</a></li>
                 </ul>
             </div>

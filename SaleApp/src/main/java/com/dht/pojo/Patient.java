@@ -26,9 +26,9 @@ public class Patient implements Serializable {
     @OneToMany(mappedBy = "patientid", fetch = FetchType.LAZY)
     private List<ExaminationSchedule> examinationSchedule;
 
-    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Account account;
+//    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+//    private Account account;
 
     public String getId() {
         return id;
@@ -118,11 +118,11 @@ public class Patient implements Serializable {
         this.examinationSchedule = examinationSchedule;
     }
 
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
+//    public Account getAccount() {
+//        return account;
+//    }
+//
+//    public void setAccount(Account account) {
+//        this.account = account;
+//    }
 }

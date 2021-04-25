@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Controller
-@RequestMapping("/doctors")
+@RequestMapping("/home/doctors")
 public class DoctorsController {
 //    @Autowired
 //    private

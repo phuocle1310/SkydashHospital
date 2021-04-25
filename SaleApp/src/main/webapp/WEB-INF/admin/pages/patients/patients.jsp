@@ -50,10 +50,12 @@
                                                 <i class="ti-settings"></i>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                <a class="dropdown-item" href="/home/patients/edit-patient" >Edit</a>
+                                                <a class="dropdown-item" href="/home/patients/edit-patient/?patientId=${patient.id}">
+                                                    Edit
+                                                </a>
                                                 <form action="/home/patients/${patient.id}" method="post">
                                                     <button type="submit" class="dropdown-item">
-                                                    Delete
+                                                            Delete
                                                     </button>
                                                 </form>
 
