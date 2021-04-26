@@ -56,6 +56,6 @@ public class PatientsController {
             return "home";
         else
             model.addAttribute("addpatient", new Patient());
-        return "add-patient";
+        return "patients";
     }
 }

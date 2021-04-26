@@ -21,22 +21,22 @@
                             </div>
                         </div>
                     </div>
-<%--                    <div class="col-md-6">--%>
-<%--                        <div class="form-group row">--%>
-<%--                            <label class="col-sm-3 col-form-label">Date of Birth</label>--%>
-<%--                            <div class="col-sm-9">--%>
-<%--                                <form:input cssClass="form-control"--%>
-<%--                                            path="dateOfBirth"/>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Date of Birth</label>
+                            <div class="col-sm-9">
+                                <form:input type="date" cssClass="form-control"
+                                            path="dateOfBirth"/>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="email"/>
+                                <form:input type="email" cssClass="form-control" path="email"/>
                             </div>
                         </div>
                     </div>

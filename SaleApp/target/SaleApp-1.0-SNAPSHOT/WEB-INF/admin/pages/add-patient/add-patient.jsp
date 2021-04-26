@@ -34,7 +34,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="email"/>
+                                <form:input type="email" cssClass="form-control" path="email"/>
                             </div>
                         </div>
                     </div>

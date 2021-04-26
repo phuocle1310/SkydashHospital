@@ -10,7 +10,7 @@
                         <p class="card-title">All Patients</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/patients/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
+                        <a href="/home/patients/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
                     </div>
                 </div>
 
@@ -64,7 +64,6 @@
                                     </td>
                                 </tr>
                                 </c:forEach>
-
                                 </tbody>
                             </table>
                         </div>

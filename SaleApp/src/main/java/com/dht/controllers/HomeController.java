@@ -32,18 +32,43 @@ public class HomeController {
 
     /**
      *
-     * Cac trang admin danh cho doctors
+     * Cac trang doctor schedule
      *
      */
 
-
+    @RequestMapping("/doctorschedules")
+    public String doctorschedules() {
+        return "doctorschedules";
+    }
 
     /**
      *
-     * Cac trang admin danh cho patients
+     * Cac trang bills
      */
 
+    @RequestMapping("/bills")
+    public String bills() {
+        return "bills";
+    }
 
+    /**
+     *
+     * Cac trang drugs
+     */
+    @RequestMapping("/drugs")
+    public String drugs() {
+        return "drugs";
+    }
+
+    /**
+     *
+     * Cac trang account
+     */
+
+    @RequestMapping("/accounts")
+    public String accounts() {
+        return "accounts";
+    }
 
 
     /**
