@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Admin
  */
 @Controller
-@RequestMapping("/home")
+@RequestMapping("/")
 public class HomeController {
 
     @Autowired

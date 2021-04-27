@@ -12,7 +12,7 @@ import javax.validation.Valid;
 
 
 @Controller
-@RequestMapping("/home/patients")
+@RequestMapping("/patients")
 public class PatientsController {
 
     @Autowired
@@ -27,7 +27,7 @@ public class PatientsController {
     @PostMapping("/{patientId}")
     public String deletePatient(@PathVariable(value = "patientId") String patientId) {
         this.patientsService.deletePatient(patientId);
-        return "redirect:/home/patients";
+        return "redirect:/patients";
     }
 
     @GetMapping("/edit-patient")
@@ -42,12 +42,12 @@ public class PatientsController {
     @PostMapping("/edit-patient")
     public String editpatient(@ModelAttribute(value = "patient") @Valid Patient p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/home/doctors";
+            return "redirect:/doctors";
         if(!this.patientsService.updatePatient(p)) {
-            return "redirect:/home";
+            return "redirect:/";
         }
         else
-            return "redirect:/home/patients";
+            return "redirect:/patients";
     }
 
     @GetMapping("/add-patient")
