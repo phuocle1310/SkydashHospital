@@ -11,7 +11,7 @@
                         <p class="card-title">All Drugs</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/home/drugs/add-drug" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Drug</a>
+                        <a href="/drugs/add-drug" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Drug</a>
                     </div>
                 </div>
 
@@ -37,10 +37,10 @@
                                                     <i class="ti-settings"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                    <a class="dropdown-item" href="/home/drugs/edit-drug/?drugId=${drug.id}">
+                                                    <a class="dropdown-item" href="/drugs/edit-drug/?drugId=${drug.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/home/drugs/${drug.id}" method="post">
+                                                    <form action="/drugs/${drug.id}" method="post">
                                                         <button type="submit" class="dropdown-item">
                                                             Delete
                                                         </button>

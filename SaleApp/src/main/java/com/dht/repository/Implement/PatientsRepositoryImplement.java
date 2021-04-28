@@ -57,10 +57,9 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
     @Transactional
     public boolean updatePatient(Patient patient) {
         try {
-            if (patient.getId() != null) {
-                currentSession().update(patient);
-            }
-            return true;
+                if(patient.getId() != null)
+                    currentSession().update(patient);
+                return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
         }
@@ -71,10 +70,8 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
     @Transactional
     public boolean addPatient(Patient patient) {
         try {
-            if(true) {
                 patient.setId(UUID.randomUUID().toString());
                 currentSession().save(patient);
-            }
             return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();

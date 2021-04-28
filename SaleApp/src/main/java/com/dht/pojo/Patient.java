@@ -9,7 +9,6 @@ import java.util.List;
 @Table(name = "patient")
 public class Patient implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
     private Date dateOfBirth;
@@ -24,7 +23,7 @@ public class Patient implements Serializable {
     private List<Bills> bill;
 
     @OneToMany(mappedBy = "patientid", fetch = FetchType.LAZY)
-    private List<ExaminationSchedule> examinationSchedule;
+    private List<Appointment> appointment;
 
 //    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
@@ -110,12 +109,12 @@ public class Patient implements Serializable {
         this.bill = bill;
     }
 
-    public List<ExaminationSchedule> getExaminationSchedule() {
-        return examinationSchedule;
+    public List<Appointment> getExaminationSchedule() {
+        return appointment;
     }
 
-    public void setExaminationSchedule(List<ExaminationSchedule> examinationSchedule) {
-        this.examinationSchedule = examinationSchedule;
+    public void setExaminationSchedule(List<Appointment> appointment) {
+        this.appointment = appointment;
     }
 
 //    public Account getAccount() {

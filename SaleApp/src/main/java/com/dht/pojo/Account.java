@@ -7,11 +7,14 @@ import java.io.Serializable;
 @Table(name = "account")
 public class Account implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String username;
     private String password;
-    private String role;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "roleid", referencedColumnName = "id")
+    private Role role;
+
     private boolean active;
 
 //    @OneToOne
@@ -49,11 +52,11 @@ public class Account implements Serializable {
         this.password = password;
     }
 
-    public String getRole() {
+    public Role getRole() {
         return role;
     }
 
-    public void setRole(String role) {
+    public void setRole(Role role) {
         this.role = role;
     }
 

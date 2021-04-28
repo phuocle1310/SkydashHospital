@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 @Embeddable
 public class ShiftDetailKey implements Serializable {
-    @Column(name="id")
+    @Column(name="doctorid")
     private String doctorid;
 
     @Column(name="shiftid")

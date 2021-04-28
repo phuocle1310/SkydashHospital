@@ -8,7 +8,6 @@ import java.util.List;
 @Table(name = "department")
 public class Department implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
 

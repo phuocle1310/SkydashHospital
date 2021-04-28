@@ -4,7 +4,7 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <li class="nav-item">
-            <a class="nav-link" href="/home">
+            <a class="nav-link" href="/">
                 <i class="icon-grid menu-icon"></i>
                 <span class="menu-title">Dashboard</span>
             </a>
@@ -17,9 +17,9 @@
             </a>
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="/home/doctors">All Doctors</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/home/doctors/edit-doctor">Edit Doctor</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/home/doctors/add-doctor">Add Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/doctors">All Doctors</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/doctors/edit-doctor">Edit Doctor</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="/doctors/add-doctor">Add Doctor</a></li>
                 </ul>
             </div>
         </li>
@@ -31,8 +31,8 @@
             </a>
             <div class="collapse" id="form-elements">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/doctorschedules" /> ">All Doctor Schedule</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/doctorschedules/add-doctorschedule" /> ">Add Doctor Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorschedules" /> ">All Doctor Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorschedules/add-doctorschedule" /> ">Add Doctor Schedule</a></li>
                 </ul>
             </div>
         </li>
@@ -45,8 +45,8 @@
             </a>
             <div class="collapse" id="charts">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients" /> ">All Patients</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/patients/add-patient" /> ">Add Patient</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/patients" /> ">All Patients</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/patients/add-patient" /> ">Add Patient</a></li>
                 </ul>
             </div>
         </li>
@@ -59,8 +59,8 @@
             </a>
             <div class="collapse" id="tables">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/bills" /> ">All Bills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/bills/add-bill" /> ">Add Bill</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/bills" /> ">All Bills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/bills/add-bill" /> ">Add Bill</a></li>
                 </ul>
             </div>
         </li>
@@ -73,8 +73,8 @@
             </a>
             <div class="collapse" id="icons">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/drugs" /> ">All Drugs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/drugs/add-drug" /> ">Add Drug</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/drugs" /> ">All Drugs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/drugs/add-drug" /> ">Add Drug</a></li>
                 </ul>
             </div>
         </li>
@@ -87,8 +87,8 @@
             </a>
             <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/accounts" />">All Accounts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/accounts/add-account" /> ">Add Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/accounts" />">All Accounts</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/accounts/add-account" /> ">Add Account</a></li>
                 </ul>
             </div>
         </li>
@@ -101,8 +101,8 @@
             </a>
             <div class="collapse" id="error">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/appointments" /> ">All Appointments</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/home/appointment/add-appointment" /> ">Add Appointment</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/appointments" /> ">All Appointments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<c:url value="/appointment/add-appointment" /> ">Add Appointment</a></li>
                 </ul>
             </div>
         </li>

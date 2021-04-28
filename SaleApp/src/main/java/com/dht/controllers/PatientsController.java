@@ -51,11 +51,17 @@ public class PatientsController {
     }
 
     @GetMapping("/add-patient")
-    public String addpatient(@ModelAttribute("addpatient") Patient p, Model model) {
-        if(!this.patientsService.addPatient(p))
-            return "home";
-        else
+    public String addPatientView(Model model) {
             model.addAttribute("addpatient", new Patient());
-        return "patients";
+        return "add-patient";
+    }
+
+    @PostMapping("/add-patient")
+    public String addpatient(@ModelAttribute("addpatient") Patient p, BindingResult err) {
+        if(err.hasErrors())
+            return "redirect:/doctors";
+        if(!this.patientsService.addPatient(p))
+            return "redirect:/";
+        return "redirect:/patients";
     }
 }

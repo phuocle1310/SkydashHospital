@@ -9,7 +9,7 @@ public class BillDetailKey implements Serializable {
     @Column(name="billid")
     private String billId;
     @Column(name="drugid")
-    private String drugId;
+    private int drugId;
 
     public String getBillId() {
         return billId;
@@ -19,11 +19,11 @@ public class BillDetailKey implements Serializable {
         this.billId = billId;
     }
 
-    public String getDrugId() {
+    public int getDrugId() {
         return drugId;
     }
 
-    public void setDrugId(String drugId) {
+    public void setDrugId(int drugId) {
         this.drugId = drugId;
     }
 }

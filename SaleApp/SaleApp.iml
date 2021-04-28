@@ -17,7 +17,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="SaleApp" value="3c889d02-39d2-48d6-8f31-c0c43fb3e7a1" />
+          <factory-entry name="SaleApp" value="1220ceb3-90fb-43d8-9fa8-e0c28c4c0932" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>

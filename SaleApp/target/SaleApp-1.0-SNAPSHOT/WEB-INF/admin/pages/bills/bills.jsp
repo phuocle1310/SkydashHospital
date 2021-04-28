@@ -11,7 +11,7 @@
                         <p class="card-title">All Bills</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/home/bills/add-bill" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Bill</a>
+                        <a href="/bills/add-bill" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Bill</a>
                     </div>
                 </div>
 
@@ -41,10 +41,10 @@
                                                     <i class="ti-settings"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                    <a class="dropdown-item" href="/home/bills/edit-bill/?drugId=${bill.id}">
+                                                    <a class="dropdown-item" href="/bills/edit-bill/?drugId=${bill.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/home/bills/${bill.id}" method="post">
+                                                    <form action="/bills/${bill.id}" method="post">
                                                         <button type="submit" class="dropdown-item">
                                                             Delete
                                                         </button>

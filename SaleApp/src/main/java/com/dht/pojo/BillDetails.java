@@ -10,12 +10,12 @@ public class BillDetails implements Serializable {
     private BillDetailKey id;
 
     @ManyToOne
-    @MapsId("billId")
+    @MapsId("drugId")
     @JoinColumn(name = "drugid")
     private Drugs drug;
 
     @ManyToOne
-    @MapsId("drugId")
+    @MapsId("billId")
     @JoinColumn(name = "billid")
     private Bills bill;
 

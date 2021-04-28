@@ -6,12 +6,14 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Add Patient</h4>
-            <form class="form-sample">
+            <form:form method="post" modelAttribute="addpatient" cssClass="form-sample">
+                <form:errors path="*" element="div" cssClass="alert alert-danger" />
                 <p class="card-description">
                     Patient Info
                 </p>
-                <form:form method="post" modelAttribute="addpatient" cssClass="form-sample">
+
                 <div class="row">
+
                     <div class="col-md-6">
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Name</label>
@@ -123,6 +125,8 @@
 <%--                        </div>--%>
 <%--                    </div>--%>
 <%--                </div>--%>
+                    <form:hidden path="disease" />
+                    <form:hidden path="image" />
                 <div class="row">
                     <div class="col-sm-12 text-right">
                         <button type="submit" class="btn btn-outline-primary">
@@ -134,7 +138,6 @@
                     </div>
                 </div>
                 </form:form>
-            </form>
         </div>
     </div>
 </div>

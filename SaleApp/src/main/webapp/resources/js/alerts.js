@@ -60,7 +60,7 @@
         showCancelButton: true,
         confirmButtonColor: '#3f51b5',
         cancelButtonColor: '#ff4081',
-        confirmButtonText: 'Great ',
+        closeOnConfirm: false,
         buttons: {
           cancel: {
             text: "Cancel",
@@ -70,7 +70,7 @@
             closeModal: true,
           },
           confirm: {
-            text: "OK",
+            text: "Yes, delete it! ",
             value: true,
             visible: true,
             className: "btn btn-primary",

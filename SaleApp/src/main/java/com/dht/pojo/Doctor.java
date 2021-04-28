@@ -4,15 +4,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "doctor")
 public class Doctor implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
     private String name;
+    private String ccid;
     private Date dateOfBirth;
     private String gender;
     private String image;
@@ -26,7 +25,7 @@ public class Doctor implements Serializable {
     private String address;
 
     @OneToMany(mappedBy = "doctorid", fetch = FetchType.LAZY)
-    private List<ExaminationSchedule> examinationSchedule;
+    private List<Appointment> appointment;
 
     @OneToOne(mappedBy = "doctor", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
@@ -107,12 +106,20 @@ public class Doctor implements Serializable {
         this.address = address;
     }
 
-    public List<ExaminationSchedule> getExaminationSchedule() {
-        return examinationSchedule;
+    public String getCcid() {
+        return ccid;
     }
 
-    public void setExaminationSchedule(List<ExaminationSchedule> examinationSchedule) {
-        this.examinationSchedule = examinationSchedule;
+    public void setCcid(String ccid) {
+        this.ccid = ccid;
+    }
+
+    public List<Appointment> getAppointment() {
+        return appointment;
+    }
+
+    public void setAppointment(List<Appointment> appointment) {
+        this.appointment = appointment;
     }
 
     public Account getAccount() {
@@ -121,5 +128,13 @@ public class Doctor implements Serializable {
 
     public void setAccount(Account account) {
         this.account = account;
+    }
+
+    public List<ShiftDetail> getShiftDetails() {
+        return shiftDetails;
+    }
+
+    public void setShiftDetails(List<ShiftDetail> shiftDetails) {
+        this.shiftDetails = shiftDetails;
     }
 }

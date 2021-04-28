@@ -9,7 +9,6 @@ import java.util.Set;
 @Table(name = "bills")
 public class Bills implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
     @ManyToOne

@@ -33,9 +33,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="i" value="0"/>
                                 <c:forEach items="${patients}" var="patient">
                                 <tr id="patient${patient.id}">
-                                    <td>${patient.id}</td>
+                                    <td>${i = i + 1}</td>
                                     <td>${patient.name}</td>
                                     <td>${patient.dateOfBirth}</td>
                                     <td>${patient.gender}</td>

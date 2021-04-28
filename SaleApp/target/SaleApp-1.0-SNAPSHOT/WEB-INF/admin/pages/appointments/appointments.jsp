@@ -11,7 +11,7 @@
                         <p class="card-title">All Appointment</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/home/appointments/add-appointment" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Appointment</a>
+                        <a href="/appointments/add-appointment" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Appointment</a>
                     </div>
                 </div>
 
@@ -43,10 +43,10 @@
                                                     <i class="ti-settings"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                    <a class="dropdown-item" href="/home/appointments/edit-appointment/?appointmentId=${appointment.id}">
+                                                    <a class="dropdown-item" href="/appointments/edit-appointment/?appointmentId=${appointment.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/home/appointments/${appointment.id}" method="post">
+                                                    <form action="/appointments/${appointment.id}" method="post">
                                                         <button type="submit" class="dropdown-item">
                                                             Delete
                                                         </button>

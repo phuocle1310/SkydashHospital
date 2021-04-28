@@ -10,7 +10,7 @@
                         <p class="card-title">All Patients</p>
                     </div>
                     <div class="col-sm-8 col-9 text-right">
-                        <a href="/home/patients/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
+                        <a href="/patients/add-patient" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Patient</a>
                     </div>
                 </div>
 
@@ -33,9 +33,10 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="i" value="0"/>
                                 <c:forEach items="${patients}" var="patient">
                                 <tr id="patient${patient.id}">
-                                    <td>${patient.id}</td>
+                                    <td>${i = i + 1}</td>
                                     <td>${patient.name}</td>
                                     <td>${patient.dateOfBirth}</td>
                                     <td>${patient.gender}</td>
@@ -50,11 +51,11 @@
                                                 <i class="ti-settings"></i>
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                <a class="dropdown-item" href="/home/patients/edit-patient/?patientId=${patient.id}">
+                                                <a class="dropdown-item" href="/patients/edit-patient/?patientId=${patient.id}">
                                                     Edit
                                                 </a>
-                                                <form action="/home/patients/${patient.id}" method="post">
-                                                    <button type="submit" class="dropdown-item">
+                                                <form action="/patients/${patient.id}" method="get" id="remove_book">
+                                                    <button type="submit" class="dropdown-item" onclick="myAlertFunction(action)">
                                                             Delete
                                                     </button>
                                                 </form>

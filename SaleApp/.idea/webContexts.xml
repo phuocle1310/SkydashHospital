@@ -12,6 +12,8 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index/head-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients/patients.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients" />
       </map>
     </option>
   </component>
