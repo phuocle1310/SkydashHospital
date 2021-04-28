@@ -11,7 +11,7 @@ public class Doctor implements Serializable {
     @Id
     private String id;
     private String name;
-    private String ccid;
+    private Integer ccid;
     private Date dateOfBirth;
     private String gender;
     private String image;
@@ -106,11 +106,11 @@ public class Doctor implements Serializable {
         this.address = address;
     }
 
-    public String getCcid() {
+    public Integer getCcid() {
         return ccid;
     }
 
-    public void setCcid(String ccid) {
+    public void setCcid(Integer ccid) {
         this.ccid = ccid;
     }
 

@@ -11,13 +11,14 @@ public class Patient implements Serializable {
     @Id
     private String id;
     private String name;
+    private Integer ccid;
     private Date dateOfBirth;
     private String gender;
-    private String image;
     private String disease;
     private String email;
     private String phone;
     private String address;
+
 
     @OneToMany(mappedBy = "patientid", fetch=FetchType.LAZY)
     private List<Bills> bill;
@@ -61,13 +62,6 @@ public class Patient implements Serializable {
         this.gender = gender;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
 
     public String getDisease() {
         return disease;
@@ -109,15 +103,23 @@ public class Patient implements Serializable {
         this.bill = bill;
     }
 
-    public List<Appointment> getExaminationSchedule() {
+    public List<Appointment> getAppointment() {
         return appointment;
     }
 
-    public void setExaminationSchedule(List<Appointment> appointment) {
+    public void setAppointment(List<Appointment> appointment) {
         this.appointment = appointment;
     }
 
-//    public Account getAccount() {
+    public Integer getCcid() {
+        return ccid;
+    }
+
+    public void setCcid(Integer ccid) {
+        this.ccid = ccid;
+    }
+
+    //    public Account getAccount() {
 //        return account;
 //    }
 //

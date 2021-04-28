@@ -83,7 +83,7 @@
                             </div>
                         </div>
                     </div>
-                    <form:hidden path="image" />
+                    <form:hidden path="ccid" />
                     <form:hidden path="disease" />
                 </div>
 <%--                <div class="row">--%>

@@ -77,7 +77,7 @@
             closeModal: true
           }
         }
-      }, function ())
+      })
 
     } else if (type === 'custom-html') {
       swal({

@@ -22,9 +22,9 @@
                                 <tr>
                                     <th>Id</th>
                                     <th>Name </th>
+                                    <th>CCID</th>
                                     <th>Date of Birth</th>
                                     <th>Gender</th>
-                                    <th>Images</th>
                                     <th>Disease</th>
                                     <th>Email</th>
                                     <th>Phone nummber</th>
@@ -38,9 +38,9 @@
                                 <tr id="patient${patient.id}">
                                     <td>${i = i + 1}</td>
                                     <td>${patient.name}</td>
+                                    <td>${patient.ccid}</td>
                                     <td>${patient.dateOfBirth}</td>
                                     <td>${patient.gender}</td>
-                                    <td>${patient.image}</td>
                                     <td>${patient.disease}</td>
                                     <td>${patient.email}</td>
                                     <td>${patient.phone}</td>

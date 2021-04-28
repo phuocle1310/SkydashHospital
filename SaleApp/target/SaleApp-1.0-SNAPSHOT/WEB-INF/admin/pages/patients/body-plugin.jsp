@@ -6,35 +6,6 @@
         $('#mytable').DataTable();
     })
 </script>
-<script>
-    function myAlertFunction(action) {
-        action.preventDefault()
-        swal({
-                title: "Remove book?",
-                text: "Watch out",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes.",
-                cancelButtonText: "No.",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function(isConfirm) {
-                if (isConfirm) {
-                    swal({
-                        title: "Deleted.",
-                        text: "Done.",
-                        type: "success"
-                    }, function() {
-                        $("#remove_book").submit();
-                    });
-                } else {
-                    swal("Cancelled", "Not done.", "error");
-                }
-            });
-    }
-</script>
 
 <script src="<c:url value="/resources/vendors/datatables.net/jquery.dataTables.js"/>"></script>
 <script src="<c:url value="/resources/vendors/datatables.net-bs4/dataTables.bootstrap4.js"/>"></script>
