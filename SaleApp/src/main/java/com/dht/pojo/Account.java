@@ -11,8 +11,8 @@ public class Account implements Serializable {
     private String username;
     private String password;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "roleid", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "roleid")
     private Role role;
 
     private boolean active;

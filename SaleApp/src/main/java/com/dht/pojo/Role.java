@@ -2,17 +2,17 @@ package com.dht.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="role")
 public class Role implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String role;
 
-    @OneToOne(mappedBy = "role")
-    private Account account;
+    @OneToMany(mappedBy = "role", fetch = FetchType.LAZY)
+    private List<Account> account;
 
     public int getId() {
         return id;
@@ -30,11 +30,11 @@ public class Role implements Serializable {
         this.role = role;
     }
 
-    public Account getAccount() {
+    public List<Account> getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(List<Account> account) {
         this.account = account;
     }
 }

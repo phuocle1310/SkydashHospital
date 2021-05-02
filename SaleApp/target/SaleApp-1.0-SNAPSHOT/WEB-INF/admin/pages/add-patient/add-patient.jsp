@@ -34,6 +34,24 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">CCID</label>
+                            <div class="col-sm-9">
+                                <form:input cssClass="form-control" path="ccid" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Disease</label>
+                            <div class="col-sm-9">
+                                <form:input cssClass="form-control" path="disease"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                                 <form:input type="email" cssClass="form-control" path="email"/>
@@ -125,8 +143,6 @@
 <%--                        </div>--%>
 <%--                    </div>--%>
 <%--                </div>--%>
-                    <form:hidden path="disease" />
-                    <form:hidden path="image" />
                 <div class="row">
                     <div class="col-sm-12 text-right">
                         <button type="submit" class="btn btn-outline-primary">

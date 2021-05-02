@@ -6,12 +6,12 @@
 package com.dht.controllers;
 
 
+import com.dht.service.IDepartmentsService;
 import com.dht.service.IPatientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 /**
  *
@@ -21,8 +21,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/")
 public class HomeController {
 
-    @Autowired
-    private IPatientsService patientsService;
+//    @Autowired
+//    private IPatientsService patientsService;
+//
+//    @Autowired
+//    private IDepartmentsService departmentsService;
+
+//    @ModelAttribute
+//    public void addAttribute(Model model) {
+//        model.addAttribute("departments", this.departmentsService.getAllDepartments());
+//    }
 
     @RequestMapping()
     public String index() {

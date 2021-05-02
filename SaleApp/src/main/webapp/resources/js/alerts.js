@@ -60,7 +60,6 @@
         showCancelButton: true,
         confirmButtonColor: '#3f51b5',
         cancelButtonColor: '#ff4081',
-        closeOnConfirm: false,
         buttons: {
           cancel: {
             text: "Cancel",
@@ -77,6 +76,9 @@
             closeModal: true
           }
         }
+      }).then(function (isConfirm) {
+        if(isConfirm)
+          document.getElementById('remove').submit()
       })
 
     } else if (type === 'custom-html') {

@@ -1,7 +1,8 @@
 package com.dht.repository.Implement;
 
+import com.dht.pojo.Department;
 import com.dht.pojo.Patient;
-import com.dht.repository.IPatientsRepository;
+import com.dht.repository.IDepartmentsRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,40 +11,39 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
-
 import java.util.List;
 import java.util.UUID;
 
 @Repository
-public class PatientsRepositoryImplement implements IPatientsRepository {
+public class DepartmentsRepositoryImplement implements IDepartmentsRepository {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
 
-    private Session currentSession() {
+    protected Session currentSession() {
         return sessionFactory.getObject().getCurrentSession();
     }
 
     @Override
     @Transactional
-    public List<Patient> getAllPatient() {
-        Query q = currentSession().createQuery("From Patient ");
+    public List<Department> getAllDepartments() {
+        Query q = currentSession().createQuery("From Department ");
 
         return q.getResultList();
     }
 
     @Override
     @Transactional
-    public Patient getPatientById(String id) {
-        return currentSession().get(Patient.class, id);
+    public Department getDepartmentById(String id) {
+        return currentSession().get(Department.class, id);
     }
 
     @Override
     @Transactional
-    public boolean deletePatient(String patientId) {
+    public boolean deleteDepartment(String departmentId) {
         try {
-            Patient p = currentSession().get(Patient.class, patientId);
-            currentSession().delete(p);
+            Department d = currentSession().get(Department.class, departmentId);
+            currentSession().delete(d);
             return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
@@ -54,11 +54,11 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
 
     @Override
     @Transactional
-    public boolean updatePatient(Patient patient) {
+    public boolean addDepartment(Department department) {
         try {
-                if(patient.getId() != null)
-                    currentSession().update(patient);
-                return true;
+            department.setId(UUID.randomUUID().toString());
+            currentSession().save(department);
+            return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
         }
@@ -67,15 +67,14 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
 
     @Override
     @Transactional
-    public boolean addPatient(Patient patient) {
+    public boolean updateDepartment(Department department) {
         try {
-                patient.setId(UUID.randomUUID().toString());
-                currentSession().save(patient);
+            if(department.getId() != null)
+                currentSession().update(department);
             return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
         }
         return false;
     }
-
 }

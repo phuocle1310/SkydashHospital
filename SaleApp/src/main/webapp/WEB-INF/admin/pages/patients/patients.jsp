@@ -54,8 +54,8 @@
                                                 <a class="dropdown-item" href="/patients/edit-patient/?patientId=${patient.id}">
                                                     Edit
                                                 </a>
-                                                <form action="/patients/${patient.id}" method="post">
-                                                    <button type="submit" class="dropdown-item">
+                                                <form onsubmit="return false;" action="/patients/${patient.id}" method="post" id="remove">
+                                                    <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
                                                             Delete
                                                     </button>
                                                 </form>

@@ -60,7 +60,7 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
     </definition>
 
     <definition name = "edit-doctor" extends="base">
-        <put-attribute name="title" value="Add doctors" />
+        <put-attribute name="title" value="Edit doctors" />
         <put-attribute name="body" value="/WEB-INF/admin/pages/edit-doctor/edit-doctor.jsp" />
         <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/edit-doctor/head-plugin.jsp" />
         <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/edit-doctor/body-plugin.jsp" />

@@ -12,6 +12,7 @@ public class ShiftDetail implements Serializable {
 
     @ManyToOne
     @MapsId(value = "doctorid")
+    @JoinColumn(name = "doctorid" )
     private Doctor doctor;
 
     @Id

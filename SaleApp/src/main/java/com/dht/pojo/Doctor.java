@@ -1,8 +1,10 @@
 package com.dht.pojo;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 @Entity
@@ -15,6 +17,8 @@ public class Doctor implements Serializable {
     private Date dateOfBirth;
     private String gender;
     private String image;
+    @Transient
+    private MultipartFile img;
 
     @ManyToOne
     @JoinColumn(name = "departmentid")
@@ -31,7 +35,7 @@ public class Doctor implements Serializable {
     @PrimaryKeyJoinColumn
     private Account account;
 
-    @OneToMany
+    @OneToMany(mappedBy = "doctor")
     private List<ShiftDetail> shiftDetails;
 
     public String getId() {
@@ -136,5 +140,13 @@ public class Doctor implements Serializable {
 
     public void setShiftDetails(List<ShiftDetail> shiftDetails) {
         this.shiftDetails = shiftDetails;
+    }
+
+    public MultipartFile getImg() {
+        return img;
+    }
+
+    public void setImg(MultipartFile img) {
+        this.img = img;
     }
 }

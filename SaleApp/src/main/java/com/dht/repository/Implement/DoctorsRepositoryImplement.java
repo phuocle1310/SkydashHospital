@@ -1,7 +1,7 @@
 package com.dht.repository.Implement;
 
-import com.dht.pojo.Patient;
-import com.dht.repository.IPatientsRepository;
+import com.dht.pojo.Doctor;
+import com.dht.repository.IDoctorsRepository;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +10,11 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.Query;
-
 import java.util.List;
 import java.util.UUID;
 
 @Repository
-public class PatientsRepositoryImplement implements IPatientsRepository {
+public class DoctorsRepositoryImplement implements IDoctorsRepository {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
@@ -26,51 +25,37 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
 
     @Override
     @Transactional
-    public List<Patient> getAllPatient() {
-        Query q = currentSession().createQuery("From Patient ");
+    public List<Doctor> getAllDoctor() {
+        Query q = currentSession().createQuery("From Doctor ");
 
         return q.getResultList();
     }
 
     @Override
     @Transactional
-    public Patient getPatientById(String id) {
-        return currentSession().get(Patient.class, id);
+    public Doctor getDoctorById(String id) {
+        return currentSession().get(Doctor.class, id);
     }
 
     @Override
     @Transactional
-    public boolean deletePatient(String patientId) {
+    public boolean deleteDoctor(String doctorId) {
         try {
-            Patient p = currentSession().get(Patient.class, patientId);
+            Doctor p = currentSession().get(Doctor.class, doctorId);
             currentSession().delete(p);
             return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
         }
-
         return false;
     }
 
     @Override
     @Transactional
-    public boolean updatePatient(Patient patient) {
+    public boolean addDoctor(Doctor doctor) {
         try {
-                if(patient.getId() != null)
-                    currentSession().update(patient);
-                return true;
-        } catch (HibernateException ex) {
-            ex.printStackTrace();
-        }
-        return false;
-    }
-
-    @Override
-    @Transactional
-    public boolean addPatient(Patient patient) {
-        try {
-                patient.setId(UUID.randomUUID().toString());
-                currentSession().save(patient);
+            doctor.setId(UUID.randomUUID().toString());;
+            currentSession().save(doctor);
             return true;
         } catch (HibernateException ex) {
             ex.printStackTrace();
@@ -78,4 +63,16 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
         return false;
     }
 
+    @Override
+    @Transactional
+    public boolean updateDoctor(Doctor doctor) {
+        try {
+//            if(doctor.getId() != null)
+                currentSession().update(doctor);
+            return true;
+        } catch (HibernateException ex) {
+            ex.printStackTrace();
+        }
+        return false;
+    }
 }
