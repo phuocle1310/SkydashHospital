@@ -11,22 +11,17 @@ public class Account implements Serializable {
     private String username;
     private String password;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "roleid")
     private Role role;
-
-    private boolean active;
-
-//    @OneToOne
-//    @MapsId
-//    @JoinColumn(name = "id")
-//    private Patient patient;
 
     @OneToOne
     @MapsId
     @JoinColumn(name = "id")
     private Doctor doctor;
 
+    @Transient
+    private String confirmPassword;
 
     public String getId() {
         return id;
@@ -60,27 +55,19 @@ public class Account implements Serializable {
         this.role = role;
     }
 
-    public boolean isActive() {
-        return active;
-    }
-
-    public void setActive(boolean active) {
-        this.active = active;
-    }
-
-//    public Patient getPatient() {
-//        return patient;
-//    }
-//
-//    public void setPatient(Patient patient) {
-//        this.patient = patient;
-//    }
-
     public Doctor getDoctor() {
         return doctor;
     }
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }

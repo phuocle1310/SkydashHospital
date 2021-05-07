@@ -7,6 +7,7 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout/sidebar.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-doctor/add-doctor.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-patient/add-patient.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-patient" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors/doctors.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/edit-doctor/edit-doctor.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/edit-doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/edit-patient/edit-patient.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/edit-patient" />
@@ -15,6 +16,8 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index/head-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/index" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients/patients.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/patients" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/client/layout/base2.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/client/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/client/pages/index2.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/client/pages" />
       </map>
     </option>
   </component>

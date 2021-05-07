@@ -6,10 +6,8 @@ import java.io.Serializable;
 
 @Embeddable
 public class ShiftDetailKey implements Serializable {
-    @Column(name="doctorid")
     private String doctorid;
 
-    @Column(name="shiftid")
     private int shiftid;
 
     public String getDoctorid() {

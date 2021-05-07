@@ -3,6 +3,7 @@ package com.dht.pojo;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.util.Set;
 
 @Entity
@@ -12,6 +13,8 @@ public class Drugs implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
+    private BigDecimal price;
+    private String unit;
     private String decription;
 
     @OneToMany(mappedBy = "drug")
@@ -47,5 +50,21 @@ public class Drugs implements Serializable {
 
     public void setDecription(String decription) {
         this.decription = decription;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public void setPrice(BigDecimal price) {
+        this.price = price;
+    }
+
+    public String getUnit() {
+        return unit;
+    }
+
+    public void setUnit(String unit) {
+        this.unit = unit;
     }
 }

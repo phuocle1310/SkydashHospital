@@ -6,7 +6,8 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Add Doctor</h4>
-            <form:form cssClass="form-sample" method="post" modelAttribute="adddoctor">
+            <form:form cssClass="form-sample" method="post" modelAttribute="adddoctor"
+            enctype="multipart/form-data">
                 <p class="card-description">
                     Doctor Info
                 </p>
@@ -31,9 +32,27 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">CCID</label>
+                            <div class="col-sm-9">
+                                <form:input type="text" cssClass="form-control" path="ccid"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
                                 <form:input type="text" cssClass="form-control" path="email"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group row">
+                            <label class="col-sm-3 col-form-label">Address</label>
+                            <div class="col-sm-9">
+                                <form:input type="text" cssClass="form-control" path="address" />
                             </div>
                         </div>
                     </div>
@@ -49,9 +68,13 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Address</label>
+                            <label class="col-sm-3 col-form-label">Department</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="address" />
+                                <form:select cssClass="form-control" path="departmentid">
+                                    <c:forEach items="${departments}" var="dep">
+                                        <option value="${dep.id}">${dep.name}</option>
+                                    </c:forEach>
+                                </form:select>
                             </div>
                         </div>
                     </div>
@@ -85,25 +108,13 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <form:input type="file" name="img[]" cssClass="file-upload-default" path="image"/>
+                                <input type="file" name="img" cssClass="file-upload-default" />
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
                                     <span class="input-group-append">
                                         <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                                     </span>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Department</label>
-                            <div class="col-sm-9">
-                                <form:select cssClass="form-control" path="departmentid">
-                                    <c:forEach items="${departments}" var="dep">
-                                        <form:option value="${dep.id}">${dep.name}</form:option>
-                                    </c:forEach>
-                                </form:select>
                             </div>
                         </div>
                     </div>

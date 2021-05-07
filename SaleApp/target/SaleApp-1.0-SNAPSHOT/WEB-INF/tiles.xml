@@ -76,7 +76,7 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
 
     <definition name = "add-drug" extends="base">
         <put-attribute name="title" value="Add drug" />
-        <put-attribute name="body" value="/WEB-INF/admin/pages/add-drug/edit-drug.jsp" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/add-drug/add-drug.jsp" />
         <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/add-drug/head-plugin.jsp" />
         <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/add-drug/body-plugin.jsp" />
     </definition>
@@ -185,4 +185,17 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="title" value="Welcome to our Hospital" />
 
     </definition>
+
+<!--    Trang Client-->
+    <definition name="base2" template="/WEB-INF/client/layout/base2.jsp">
+        <put-attribute name="title2" value="Welcome to our hospital" />
+        <put-attribute name="header2" value="/WEB-INF/client/layout/header2.jsp"/>
+        <put-attribute name="footer2" value="/WEB-INF/client/layout/footer2.jsp"/>
+        <put-attribute name="body2" value="WELCOMEEEEEEE"/>
+    </definition>
+
+    <definition name="index2" extends="base2">
+        <put-attribute name="body2" value="/WEB-INF/client/pages/index2"/>
+    </definition>
+
 </tiles-definitions>

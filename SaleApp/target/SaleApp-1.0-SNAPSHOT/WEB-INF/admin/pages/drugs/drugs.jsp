@@ -22,15 +22,22 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Name </th>
+                                    <th>Name</th>
+                                    <th>Unit</th>
+                                    <th>Price</th>
+                                    <th>Decription</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="i" value="0"/>
                                 <c:forEach items="${drugs}" var="drug">
                                     <tr id="drug${drug.id}">
-                                        <td>${drug.id}</td>
+                                        <td>${i = i+1}</td>
                                         <td>${drug.name}</td>
+                                        <td>${drug.price} VND</td>
+                                        <td>${drug.unit}</td>
+                                        <td>${drug.decription}</td>
                                         <td style="text-align: right">
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,8 +47,8 @@
                                                     <a class="dropdown-item" href="/drugs/edit-drug/?drugId=${drug.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/drugs/${drug.id}" method="post">
-                                                        <button type="submit" class="dropdown-item">
+                                                    <form onsubmit="return false;" action="/drugs/${drug.id}" method="post" id="remove">
+                                                        <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
                                                             Delete
                                                         </button>
                                                     </form>

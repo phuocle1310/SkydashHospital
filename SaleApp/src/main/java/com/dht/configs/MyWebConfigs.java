@@ -5,23 +5,22 @@
  */
 package com.dht.configs;
 
+import com.dht.formatter.DepartmentFormatter;
+import com.dht.formatter.DoctorFormatter;
+import com.dht.formatter.RoleFormatter;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
-import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import org.springframework.web.servlet.view.JstlView;
 
-/**
- *
- * @author Admin
- */
+
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
@@ -40,7 +39,12 @@ public class MyWebConfigs implements WebMvcConfigurer {
         registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
         registry.addResourceHandler("/fonts/**").addResourceLocations("/resources/fonts/");
         registry.addResourceHandler("/scss/**").addResourceLocations("/resources/scss/");
-        registry.addResourceHandler("/vendors/**").addResourceLocations("/resources/vendors/");
+
+//        Cac trang client
+//        registry.addResourceHandler("/client/css/**").addResourceLocations("resources/client/css/");
+//        registry.addResourceHandler("/client/fonts/**").addResourceLocations("resources/client/fonts/");
+//        registry.addResourceHandler("/client/images/**").addResourceLocations("resources/client/images/");
+//        registry.addResourceHandler("/client/js/**").addResourceLocations("resources/client/js/");
     }
     
 //    @Bean
@@ -58,5 +62,12 @@ public class MyWebConfigs implements WebMvcConfigurer {
         resource.addBasenames("messages", "products");
         
         return resource;
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addFormatter(new DepartmentFormatter());
+        registry.addFormatter(new RoleFormatter());
+        registry.addFormatter(new DoctorFormatter());
     }
 }

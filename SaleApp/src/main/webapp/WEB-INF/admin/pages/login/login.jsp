@@ -10,16 +10,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Skydash Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="<c:url value="/vendors/feather/feather.css" />">
-    <link rel="stylesheet" href="<c:url value="/vendors/ti-icons/css/themify-icons.css"/>">
-    <link rel="stylesheet" href="<c:url value="/vendors/css/vendor.bundle.base.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/vendors/feather/feather.css" />">
+    <link rel="stylesheet" href="<c:url value="/resources/vendors/ti-icons/css/themify-icons.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/vendors/css/vendor.bundle.base.css"/>">
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="<c:url value="/css/vertical-layout-light/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="/resources/css/vertical-layout-light/style.css"/>">
     <!-- endinject -->
-    <link rel="shortcut icon" href="<c:url value="/images/favicon.png" />" />
+    <link rel="shortcut icon" href="<c:url value="/resources/images/favicon.png" />" />
 </head>
 
 <body>

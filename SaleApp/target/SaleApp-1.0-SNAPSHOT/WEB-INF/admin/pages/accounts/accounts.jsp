@@ -22,32 +22,33 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
+                                    <th>Doctor Name</th>
                                     <th>User Name </th>
                                     <th>Password</th>
                                     <th>Role</th>
-                                    <th>Active</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="i" value="0"/>
                                 <c:forEach items="${accounts}" var="account">
-                                    <tr id="account${account.id}">
-                                        <td>${account.id}</td>
+                                    <tr id="account${account.doctor.id}">
+                                        <td>${i = i+1}</td>
+                                        <td>${account.doctor.name}</td>
                                         <td>${account.username}</td>
                                         <td>${account.password}</td>
-                                        <td>${account.role}</td>
-                                        <td>${account.active}</td>
+                                        <td>${account.role.role}</td>
                                         <td style="text-align: right">
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="ti-settings"></i>
                                                 </button>
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-                                                    <a class="dropdown-item" href="/accounts/edit-account/?accountId=${account.id}">
+                                                    <a class="dropdown-item" href="/accounts/edit-account/?accountId=${account.doctor.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/accounts/${account.id}" method="post">
-                                                        <button type="submit" class="dropdown-item">
+                                                    <form onsubmit="return false;" action="/accounts/${account.doctor.id}" method="post" id="remove">
+                                                        <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
                                                             Delete
                                                         </button>
                                                     </form>

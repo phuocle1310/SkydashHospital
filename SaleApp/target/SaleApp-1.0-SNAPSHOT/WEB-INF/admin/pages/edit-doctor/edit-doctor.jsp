@@ -7,9 +7,9 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Edit Doctor</h4>
-            <form:form method="post" modelAttribute="doctor" cssClass="form-sample"
-                       enctype="multipart/form-data">
+            <form:form method="post" modelAttribute="doctor" cssClass="form-sample">
                     <form:hidden path="id"/>
+                    <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                 <p class="card-description">
                     Doctor Info
                 </p>
@@ -69,13 +69,17 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-<%--                        <form:hidden path="departmentid"/>--%>
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Department</label>
                             <div class="col-sm-9">
                                 <form:select cssClass="form-control" path="departmentid">
                                     <c:forEach items="${departments}" var="dep">
-                                        <option value="${dep.id}">${dep.name}</option>
+                                        <c:if test="${dep.id == doctor.departmentid.id}">
+                                            <option selected value="${dep.id}">${dep.name}</option>
+                                        </c:if>
+                                        <c:if test="${dep.id != doctor.departmentid.id}">
+                                            <option value="${dep.id}">${dep.name}</option>
+                                        </c:if>
                                     </c:forEach>
                                 </form:select>
                             </div>
@@ -111,7 +115,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <form:input type="file" name="img[]" cssClass="file-upload-default" path="img"/>
+                                <form:hidden path="image"/>
+<%--                                <form:input type="file" name="img[]" cssClass="file-upload-default" path="img"/>--%>
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" placeholder="Upload Image"/>
                                     <span class="input-group-append">
@@ -122,7 +127,6 @@
                         </div>
                     </div>
                 </div>
-<%--                    <form:hidden path="image"/>--%>
                     <div class="row">
                         <div class="col-sm-12 text-right">
                             <button type="submit" class="btn btn-outline-primary">

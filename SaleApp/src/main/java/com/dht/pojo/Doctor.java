@@ -31,7 +31,7 @@ public class Doctor implements Serializable {
     @OneToMany(mappedBy = "doctorid", fetch = FetchType.LAZY)
     private List<Appointment> appointment;
 
-    @OneToOne(mappedBy = "doctor", cascade = CascadeType.ALL)
+    @OneToOne(mappedBy = "doctor", cascade = CascadeType.REMOVE)
     @PrimaryKeyJoinColumn
     private Account account;
 

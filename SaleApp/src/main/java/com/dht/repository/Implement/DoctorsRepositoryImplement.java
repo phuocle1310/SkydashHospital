@@ -26,7 +26,7 @@ public class DoctorsRepositoryImplement implements IDoctorsRepository {
     @Override
     @Transactional
     public List<Doctor> getAllDoctor() {
-        Query q = currentSession().createQuery("From Doctor ");
+        Query q = currentSession().createQuery("From Doctor order by name asc ");
 
         return q.getResultList();
     }

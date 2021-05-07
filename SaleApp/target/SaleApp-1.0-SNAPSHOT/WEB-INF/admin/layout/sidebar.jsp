@@ -18,24 +18,24 @@
             <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/doctors">All Doctors</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="/doctors/edit-doctor">Edit Doctor</a></li>
                     <li class="nav-item"> <a class="nav-link" href="/doctors/add-doctor">Add Doctor</a></li>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
-                <i class="icon-columns menu-icon"></i>
-                <span class="menu-title">Doctor Schedules</span>
-                <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="form-elements">
-                <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorschedules" /> ">All Doctor Schedule</a></li>
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorschedules/add-doctorschedule" /> ">Add Doctor Schedule</a></li>
                 </ul>
             </div>
         </li>
+<%--        <li class="nav-item">--%>
+<%--            <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">--%>
+<%--                <i class="icon-columns menu-icon"></i>--%>
+<%--                <span class="menu-title">Doctor Schedules</span>--%>
+<%--                <i class="menu-arrow"></i>--%>
+<%--            </a>--%>
+<%--            <div class="collapse" id="form-elements">--%>
+<%--                <ul class="nav flex-column sub-menu">--%>
+<%--                    --%>
+<%--                </ul>--%>
+<%--            </div>--%>
+<%--        </li>--%>
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
@@ -107,19 +107,19 @@
             </div>
         </li>
 
-        <%--        <li class="nav-item">--%>
-        <%--            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">--%>
-        <%--                <i class="icon-head menu-icon"></i>--%>
-        <%--                <span class="menu-title">User Pages</span>--%>
-        <%--                <i class="menu-arrow"></i>--%>
-        <%--            </a>--%>
-        <%--            <div class="collapse" id="auth">--%>
-        <%--                <ul class="nav flex-column sub-menu">--%>
-        <%--                    <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>--%>
-        <%--                    <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>--%>
-        <%--                </ul>--%>
-        <%--            </div>--%>
-        <%--        </li>--%>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="collapse" href="#form-elements" aria-expanded="false" aria-controls="form-elements">
+                        <i class="icon-head menu-icon"></i>
+                        <span class="menu-title">User Pages</span>
+                        <i class="menu-arrow"></i>
+                    </a>
+                    <div class="collapse" id="form-elements">
+                        <ul class="nav flex-column sub-menu">
+                            <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
+                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                        </ul>
+                    </div>
+                </li>
 
     </ul>
 </nav>

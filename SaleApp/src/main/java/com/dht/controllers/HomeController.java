@@ -37,6 +37,11 @@ public class HomeController {
         return "index";
     }
 
+    @RequestMapping("/client")
+    public String index2() {
+        return "index2";
+    }
+
 
     /**
      *
@@ -63,20 +68,20 @@ public class HomeController {
      *
      * Cac trang drugs
      */
-    @RequestMapping("/drugs")
-    public String drugs() {
-        return "drugs";
-    }
+//    @RequestMapping("/drugs")
+//    public String drugs() {
+//        return "drugs";
+//    }
 
     /**
      *
      * Cac trang account
      */
 
-    @RequestMapping("/accounts")
-    public String accounts() {
-        return "accounts";
-    }
+//    @RequestMapping("/accounts")
+//    public String accounts() {
+//        return "accounts";
+//    }
 
 
     /**
