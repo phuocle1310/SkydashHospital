@@ -115,8 +115,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <form:hidden path="image"/>
-<%--                                <form:input type="file" name="img[]" cssClass="file-upload-default" path="img"/>--%>
+                                <form:input type="file" cssClass="file-upload-default" path="img"/>
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" placeholder="Upload Image"/>
                                     <span class="input-group-append">

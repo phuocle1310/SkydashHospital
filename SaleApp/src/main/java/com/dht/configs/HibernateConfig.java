@@ -8,6 +8,9 @@ package com.dht.configs;
 import java.util.Properties;
 //import javax.ejb.TransactionManagement;
 import javax.sql.DataSource;
+
+import com.cloudinary.Cloudinary;
+import com.cloudinary.utils.ObjectUtils;
 import org.hibernate.cfg.AvailableSettings;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -28,6 +31,13 @@ public class HibernateConfig {
 
     @Autowired
     private Environment env;
+
+    @Bean
+    public Cloudinary cloudinary() {
+        return new Cloudinary(ObjectUtils.asMap("cloud_name", "ou-hcmc"
+                , "api_key", "969386329894481",
+                "api_secret", "mg_eWP3Hbfzx-csv5H-9uPVcBA4"));
+    }
 
     @Bean
     public LocalSessionFactoryBean getSessionFactory() {

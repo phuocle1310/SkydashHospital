@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!DOCTYPE html>
@@ -30,20 +31,27 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="auth-form-light text-left py-5 px-4 px-sm-5">
                         <div class="brand-logo">
-                            <img src="<c:url value="/images/logo.svg" />" alt="logo">
+                            <img src="<c:url value="/resources/images/logo.svg" />" alt="logo">
                         </div>
                         <h4>Hi!! Skydash Hospital</h4>
                         <h6 class="font-weight-light">Sign in to continue.</h6>
-                        <form class="pt-3">
+                        <form:form cssClass="pt-3" method="post" action="${pageContext.request.contextPath}/login">
                             <div class="form-group">
-                                <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                                <input type="text" class="form-control form-control-lg" id="username" name="username"
+                                       placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                                <input type="password" class="form-control form-control-lg" id="password" name="password"
+                                       placeholder="Password">
                             </div>
+                            <c:choose>
+                                <c:when test="${pageContext.request.userPrincipal.name == null}">
                             <div class="mt-3">
-                                <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="/">SIGN IN</a>
+                                <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">
+                                   SIGN IN</button>
                             </div>
+                                </c:when>
+                            </c:choose>
                             <div class="my-2 d-flex justify-content-between align-items-center">
                                 <div class="form-check">
                                     <label class="form-check-label text-muted">
@@ -53,15 +61,15 @@
                                 </div>
                                 <a href="#" class="auth-link text-black">Forgot password?</a>
                             </div>
-                            <div class="mb-2">
-                                <button type="button" class="btn btn-block btn-facebook auth-form-btn">
-                                    <i class="ti-facebook mr-2"></i>Connect using facebook
-                                </button>
-                            </div>
-                            <div class="text-center mt-4 font-weight-light">
-                                Don't have an account? <a href="register.html" class="text-primary">Create</a>
-                            </div>
-                        </form>
+<%--                            <div class="mb-2">--%>
+<%--                                <button type="button" class="btn btn-block btn-facebook auth-form-btn">--%>
+<%--                                    <i class="ti-facebook mr-2"></i>Connect using facebook--%>
+<%--                                </button>--%>
+<%--                            </div>--%>
+<%--                            <div class="text-center mt-4 font-weight-light">--%>
+<%--                                Don't have an account? <a href="register.html" class="text-primary">Create</a>--%>
+<%--                            </div>--%>
+                        </form:form>
                     </div>
                 </div>
             </div>

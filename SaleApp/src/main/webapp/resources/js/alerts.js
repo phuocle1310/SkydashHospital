@@ -1,4 +1,10 @@
+
 (function($) {
+  var id="";
+  alert = (type,ids)=>{
+    id=ids
+    showSwal(type)
+  }
   showSwal = function(type) {
     'use strict';
     if (type === 'basic') {
@@ -78,7 +84,7 @@
         }
       }).then(function (isConfirm) {
         if(isConfirm)
-          document.getElementById('remove').submit()
+          document.getElementById(id).submit()
       })
 
     } else if (type === 'custom-html') {

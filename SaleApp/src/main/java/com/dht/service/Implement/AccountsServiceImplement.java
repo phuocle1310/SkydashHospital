@@ -8,17 +8,21 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-//@Service("userDetailsService")
-@Service
+@Service("userDetailsService")
 public class AccountsServiceImplement implements IAccountsService {
 
     @Autowired
     private IAccountsRepository accountsRepository;
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override
     public List<Account> getAllAccount() {
@@ -30,10 +34,10 @@ public class AccountsServiceImplement implements IAccountsService {
         return this.accountsRepository.getAccountById(id);
     }
 
-//    @Override
-//    public Account getAccountByUsername(String username) {
-//        return accountsRepository.getAccountByUsername(username);
-//    }
+    @Override
+    public Account getAccountByUsername(String username) {
+        return accountsRepository.getAccountByUsername(username);
+    }
 
     @Override
     public boolean deleteAccount(String accountId) {
@@ -42,6 +46,7 @@ public class AccountsServiceImplement implements IAccountsService {
 
     @Override
     public boolean addAccount(Account account) {
+        account.setPassword(bCryptPasswordEncoder.encode(account.getPassword()));
         return this.accountsRepository.addAccount(account);
     }
 
@@ -50,15 +55,16 @@ public class AccountsServiceImplement implements IAccountsService {
         return this.accountsRepository.updateAccount(account);
     }
 
-//    @Override
-//    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        Account accounts = accountsRepository.getAccountByUsername(username);
-//        if (accounts.getId() == null)
-//            throw new UsernameNotFoundException("Không tồn tại!");
-//        Account a = accounts;
-//        Set<GrantedAuthority> authorities = new HashSet<>();
-//        authorities.add(new SimpleGrantedAuthority(a.getRole().getRole()));
-//        return new org.springframework.security.core.userdetails.User(
-//                a.getUsername(), a.getPassword(), authorities);
-//    }
+    @Override
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        Account accounts = accountsRepository.getAccountByUsername(username);
+        if (accounts.getId() == null)
+            throw new UsernameNotFoundException("Không tồn tại!");
+        Account a = accounts;
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        authorities.add(new SimpleGrantedAuthority(a.getRole().getRole()));
+        return new org.springframework.security.core.userdetails.User(
+                a.getUsername(), a.getPassword(), authorities);
+    }
 }

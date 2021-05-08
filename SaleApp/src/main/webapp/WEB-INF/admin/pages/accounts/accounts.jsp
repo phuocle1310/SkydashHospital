@@ -47,8 +47,8 @@
                                                     <a class="dropdown-item" href="/accounts/edit-account/?accountId=${account.doctor.id}">
                                                         Edit
                                                     </a>
-                                                    <form onsubmit="return false;" action="/accounts/${account.doctor.id}" method="post" id="remove">
-                                                        <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
+                                                    <form onsubmit="return false;" action="/accounts/delete/${account.doctor.id}" method="post" id="${account.doctor.id}">
+                                                        <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${account.doctor.id}')">
                                                             Delete
                                                         </button>
                                                     </form>

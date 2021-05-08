@@ -17,8 +17,7 @@ public class AccountsRepositoryImplement implements IAccountsRepository {
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
-//    @Autowired
-//    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 
     private Session currentSession() {
         return sessionFactory.getObject().getCurrentSession();

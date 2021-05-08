@@ -46,8 +46,8 @@
                                                     <a class="dropdown-item" href="/appointments/edit-appointment/?appointmentId=${appointment.id}">
                                                         Edit
                                                     </a>
-                                                    <form action="/appointments/${appointment.id}" method="post">
-                                                        <button type="submit" class="dropdown-item">
+                                                    <form onsubmit="return false;" action="/appointments/${appointment.id}" method="post" id="${appointment.id}">
+                                                        <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${appointment.id}')">
                                                             Delete
                                                         </button>
                                                     </form>

@@ -29,7 +29,7 @@ public class AccountsController {
         return "accounts";
     }
 
-    @PostMapping("/{accountId}")
+    @PostMapping("/delete/{accountId}")
     public String deleteAccount(@PathVariable(value = "accountId") String accountId) {
         this.accountsService.deleteAccount(accountId);
         return "redirect:/accounts";

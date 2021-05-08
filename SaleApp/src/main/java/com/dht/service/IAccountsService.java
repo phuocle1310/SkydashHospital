@@ -5,11 +5,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
-//public interface IAccountsService extends UserDetailsService {
-public interface IAccountsService{
+public interface IAccountsService extends UserDetailsService {
     List<Account> getAllAccount();
     Account getAccountById(String id);
-//    Account getAccountByUsername(String username);
+    Account getAccountByUsername(String username);
     boolean deleteAccount(String accountId);
     boolean addAccount(Account account);
     boolean updateAccount(Account account);

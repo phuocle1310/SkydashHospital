@@ -113,12 +113,12 @@
                         <span class="menu-title">User Pages</span>
                         <i class="menu-arrow"></i>
                     </a>
-                    <div class="collapse" id="form-elements">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
-                        </ul>
-                    </div>
+<%--                    <div class="collapse" id="form-elements">--%>
+<%--                        <ul class="nav flex-column sub-menu">--%>
+<%--                            <li class="nav-item"> <a class="nav-link" href="/login"> Login </a></li>--%>
+<%--                            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>--%>
+<%--                        </ul>--%>
+<%--                    </div>--%>
                 </li>
 
     </ul>

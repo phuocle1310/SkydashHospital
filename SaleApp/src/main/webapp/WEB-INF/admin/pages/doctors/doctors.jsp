@@ -29,7 +29,9 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="doctor-img">
-                                        <a class="avatar" href="#"><img alt="" src="${doctor.image}" class="rounded-circle"></a>
+                                        <a class="avatar" href="#">
+                                            <img alt="" src="${doctor.image}" width="150px" height="150px"
+                                                 class="rounded-circle"></a>
                                     </div>
                                 </div>
                                 <div class="col-md-4 text-md-right">
@@ -38,10 +40,9 @@
                                             <i class="ti-settings"></i>
                                         </button>
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
-<%--                                            &departmentId=$${doctor.departmentid.id}--%>
                                             <a class="dropdown-item" href="/doctors/edit-doctor/?doctorId=${doctor.id}" >Edit</a>
-                                            <form onsubmit="return false;" action="/doctors/${doctor.id}" method="post" id="remove">
-                                                <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
+                                            <form onsubmit="return false;" action="/doctors/delete/${doctor.id}" method="post" id="${doctor.id}">
+                                                <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${doctor.id}')">
                                                     Delete
                                                 </button>
                                             </form>

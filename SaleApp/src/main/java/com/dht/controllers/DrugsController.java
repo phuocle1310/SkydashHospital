@@ -23,7 +23,7 @@ public class DrugsController {
         return "drugs";
     }
 
-    @PostMapping("/{drugId}")
+    @PostMapping("/delete/{drugId}")
     public String deleteDrug(@PathVariable(value = "drugId") String drugId) {
         this.drugsService.deleteDrugs (Integer.parseInt(drugId));
         return "redirect:/drugs";

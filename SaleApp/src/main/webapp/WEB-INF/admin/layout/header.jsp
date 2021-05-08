@@ -71,21 +71,36 @@
                     </a>
                 </div>
             </li>
+
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                     <img src="<c:url value="/images/faces/face28.jpg" />" alt="profile"/>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-                    <a class="dropdown-item">
-                        <i class="ti-settings text-primary"></i>
-                        Settings
-                    </a>
-                    <a class="dropdown-item" href="/login">
-                        <i class="ti-power-off text-primary"></i>
-                        Logout
-                    </a>
+
+                    <c:choose>
+                        <c:when test="${pageContext.request.userPrincipal.name == null}">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                Settings
+                            </a>
+                        </c:when>
+                        <c:when test="${pageContext.request.userPrincipal.name != null}">
+                            <a class="dropdown-item">
+                                <i class="ti-settings text-primary"></i>
+                                Settings
+                            </a>
+                            <a class="dropdown-item">
+                                <a href="#">${pageContext.request.userPrincipal.name}</a>
+                            </a>
+                            <a class="dropdown-item" href="<c:url value="/logout" />">
+                                <i class="ti-power-off text-primary"></i>Logout
+                            </a>
+                        </c:when>
+                    </c:choose>
                 </div>
             </li>
+
             <li class="nav-item nav-settings d-none d-lg-flex">
                 <a class="nav-link" href="#">
                     <i class="icon-ellipsis"></i>

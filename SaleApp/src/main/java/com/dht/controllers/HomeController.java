@@ -18,29 +18,14 @@ import org.springframework.web.bind.annotation.*;
  * @author Admin
  */
 @Controller
-@RequestMapping("/")
 public class HomeController {
 
-//    @Autowired
-//    private IPatientsService patientsService;
-//
-//    @Autowired
-//    private IDepartmentsService departmentsService;
-
-//    @ModelAttribute
-//    public void addAttribute(Model model) {
-//        model.addAttribute("departments", this.departmentsService.getAllDepartments());
-//    }
-
-    @RequestMapping()
+    @RequestMapping("/home")
     public String index() {
         return "index";
     }
 
-    @RequestMapping("/client")
-    public String index2() {
-        return "index2";
-    }
+
 
 
     /**
@@ -64,32 +49,4 @@ public class HomeController {
         return "bills";
     }
 
-    /**
-     *
-     * Cac trang drugs
-     */
-//    @RequestMapping("/drugs")
-//    public String drugs() {
-//        return "drugs";
-//    }
-
-    /**
-     *
-     * Cac trang account
-     */
-
-//    @RequestMapping("/accounts")
-//    public String accounts() {
-//        return "accounts";
-//    }
-
-
-    /**
-     *  Trang Login va Forgot password
-     */
-
-    @RequestMapping("/login")
-    public String login() {
-        return "login";
-    }
 }

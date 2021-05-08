@@ -47,8 +47,8 @@
                                                     <a class="dropdown-item" href="/drugs/edit-drug/?drugId=${drug.id}">
                                                         Edit
                                                     </a>
-                                                    <form onsubmit="return false;" action="/drugs/${drug.id}" method="post" id="remove">
-                                                        <button type="submit" class="dropdown-item" onclick="showSwal('warning-message-and-cancel')">
+                                                    <form onsubmit="return false;" action="/drugs/delete/${drug.id}" method="post" id="${drug.id}">
+                                                        <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${drug.id}')">
                                                             Delete
                                                         </button>
                                                     </form>

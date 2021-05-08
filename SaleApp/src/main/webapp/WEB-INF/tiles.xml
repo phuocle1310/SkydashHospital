@@ -195,7 +195,7 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
     </definition>
 
     <definition name="index2" extends="base2">
-        <put-attribute name="body2" value="/WEB-INF/client/pages/index2"/>
+        <put-attribute name="body2" value="/WEB-INF/client/pages/index2.jsp"/>
     </definition>
 
 </tiles-definitions>
