@@ -39,8 +39,11 @@ public class DoctorsController {
     }
 
     @PostMapping("/delete/{doctorId}")
-    public String deleteDoctor(@PathVariable(value = "doctorId") String doctorId) {
-        this.doctorsService.deleteDoctor(doctorId);
+    public String deleteDoctor(@PathVariable(value = "doctorId") String doctorId, Model model) {
+        if(!this.doctorsService.isAdmin(doctorId))
+            this.doctorsService.deleteDoctor(doctorId);
+        else
+            model.addAttribute("errMsg", "Không thể xóa Admin");
         return "redirect:/doctors";
     }
 
@@ -57,11 +60,23 @@ public class DoctorsController {
 
     @PostMapping("/edit-doctor")
     public String editDoctor(@ModelAttribute("doctor") @Valid Doctor p, BindingResult err) {
+        Map upload = new HashMap();
+        MultipartFile img = p.getImg();
+        String path = "";
+        if(img != null && !img.isEmpty()) {
+            try {
+                upload = cloudinary.uploader().upload(img.getBytes(),ObjectUtils.asMap(
+                        "public_id", "my_folder/" + p.getName()));
+                path = upload.get("url").toString();
+                p.setImage(path);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         if(!this.doctorsService.updateDoctor(p)) {
             return "redirect:/";
         }
-        else
-            return "redirect:/doctors";
+        return "redirect:/doctors";
     }
 
     @GetMapping("/add-doctor")
@@ -73,8 +88,8 @@ public class DoctorsController {
 
     @PostMapping("/add-doctor")
     public String addDoctor(@ModelAttribute("adddoctor") Doctor p, BindingResult err) {
-//        if(err.hasErrors())
-//            return "redirect:/doctors";
+        if(err.hasErrors())
+            return "redirect:/";
         Map upload = new HashMap();
         MultipartFile img = p.getImg();
         String path = "";

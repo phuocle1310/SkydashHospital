@@ -38,7 +38,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         http.logout().logoutSuccessUrl("/login");
         http.exceptionHandling()
                 .accessDeniedPage("/login?accessDenied");
-        http.authorizeRequests().antMatchers("/home").permitAll()
+        http.authorizeRequests().antMatchers("/").permitAll()
                 .antMatchers("/home")
                 .access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/patients").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
@@ -48,7 +48,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/appointments").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/bills").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/drugs").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
-        .antMatchers("/**/delete").access("hasAnyRole('ROLE_ADMIN')")
+        .antMatchers("/**/delete/**/").access("hasAnyRole('ROLE_ADMIN')")
         .antMatchers("/**/patients/add-patient").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/patients/edit-patient").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/doctors/add-doctor").access("hasAnyRole('ROLE_ADMIN')")

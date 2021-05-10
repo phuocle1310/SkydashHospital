@@ -16,7 +16,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="name"/>
+                                <form:input type="text" cssClass="form-control" path="name" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -24,7 +24,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date of Birth</label>
                             <div class="col-sm-9">
-                                <form:input type="date" cssClass="form-control" path="dateOfBirth"/>
+                                <form:input type="date" cssClass="form-control" path="dateOfBirth" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">CCID</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="ccid"/>
+                                <form:input type="text" cssClass="form-control" path="ccid" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="email"/>
+                                <form:input type="email" cssClass="form-control" path="email" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Address</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="address" />
+                                <form:input type="text" cssClass="form-control" path="address" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -60,7 +60,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Phone Number</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="phone" />
+                                <form:input type="text" cssClass="form-control" path="phone" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <form:input type="file" path="img" cssClass="file-upload-default" />
+                                <form:input type="file" path="img" cssClass="file-upload-default" required="true;"/>
                                 <div class="input-group col-xs-12">
                                     <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
                                     <span class="input-group-append">

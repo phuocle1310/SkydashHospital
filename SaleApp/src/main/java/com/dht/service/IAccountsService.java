@@ -12,4 +12,5 @@ public interface IAccountsService extends UserDetailsService {
     boolean deleteAccount(String accountId);
     boolean addAccount(Account account);
     boolean updateAccount(Account account);
+    boolean isAdminAccount(String doctorId);
 }

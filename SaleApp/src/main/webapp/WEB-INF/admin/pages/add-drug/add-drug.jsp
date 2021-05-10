@@ -17,7 +17,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Drug Name</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="name" />
+                                <form:input type="text" cssClass="form-control" path="name" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Unit</label>
                             <div class="col-sm-9">
-                                <form:input cssClass="form-control" path="unit" />
+                                <form:input cssClass="form-control" path="unit" required="true;" />
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Price</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="price" />
+                                <form:input type="text" cssClass="form-control" path="price" required="true;"/>
                             </div>
                         </div>
                     </div>

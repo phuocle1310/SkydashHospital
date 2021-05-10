@@ -30,8 +30,11 @@ public class AccountsController {
     }
 
     @PostMapping("/delete/{accountId}")
-    public String deleteAccount(@PathVariable(value = "accountId") String accountId) {
-        this.accountsService.deleteAccount(accountId);
+    public String deleteAccount(@PathVariable(value = "accountId") String accountId, Model model) {
+        if(!this.accountsService.isAdminAccount(accountId))
+            this.accountsService.deleteAccount(accountId);
+        else
+            model.addAttribute("errMsg", "Không thể xóa tai khoan Admin");
         return "redirect:/accounts";
     }
 
@@ -49,7 +52,8 @@ public class AccountsController {
     @PostMapping("/edit-account")
     public String editAccount(@ModelAttribute(value = "account") @Valid Account p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "redirect:/doctors";
+        System.out.println("pass word : " + p.getPassword());
         if(!this.accountsService.updateAccount(p)) {
             return "redirect:/";
         }

@@ -102,7 +102,6 @@
             <div class="collapse" id="error">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"><a class="nav-link" href="<c:url value="/appointments" /> ">All Appointments</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/appointment/add-appointment" /> ">Add Appointment</a></li>
                 </ul>
             </div>
         </li>

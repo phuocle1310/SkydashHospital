@@ -25,7 +25,7 @@ public class AppointmentsServiceImplement implements IAppointmentsService {
     }
 
     @Override
-    public boolean deleteAppointment(String appoinmentId) {
+    public boolean deleteAppointment(int appoinmentId) {
         return this.appointmentsRepository.deleteAppointment(appoinmentId);
     }
 

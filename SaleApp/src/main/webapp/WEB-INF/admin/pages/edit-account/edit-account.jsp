@@ -6,7 +6,7 @@
 <div class="col-12 grid-margin">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Add Account</h4>
+            <h4 class="card-title">Edit Account</h4>
             <form:form method="post" modelAttribute="account" cssClass="form-sample">
                 <form:errors path="*" element="div" cssClass="alert alert-danger" />
                 <p class="card-description">
@@ -18,7 +18,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Doctor Name</label>
                             <div class="col-sm-9">
-                                <form:label path="id"/>
+                                <input disabled="true" class="form-control" value="${account.doctor.name}"/>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">User Name</label>
                             <div class="col-sm-9">
-                                <form:input cssClass="form-control" path="username" />
+                                <form:input cssClass="form-control" path="username" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <form:input type="password" cssClass="form-control" path="password" />
+                                <form:input type="password" cssClass="form-control" path="password" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Confirm Password</label>
                             <div class="col-sm-9">
-                                <form:input type="password" cssClass="form-control" path="confirmPassword" />
+                                <form:input type="password" cssClass="form-control" path="confirmPassword" required="true;" />
                             </div>
                         </div>
                     </div>

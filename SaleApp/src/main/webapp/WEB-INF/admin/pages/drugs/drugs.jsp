@@ -35,8 +35,8 @@
                                     <tr id="drug${drug.id}">
                                         <td>${i = i+1}</td>
                                         <td>${drug.name}</td>
-                                        <td>${drug.price} VND</td>
                                         <td>${drug.unit}</td>
+                                        <td>${drug.price} VND</td>
                                         <td>${drug.decription}</td>
                                         <td style="text-align: right">
                                             <div class="dropdown">

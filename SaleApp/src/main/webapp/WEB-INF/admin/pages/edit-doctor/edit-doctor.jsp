@@ -7,7 +7,8 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Edit Doctor</h4>
-            <form:form method="post" modelAttribute="doctor" cssClass="form-sample">
+            <form:form method="post" modelAttribute="doctor" cssClass="form-sample"
+                       enctype="multipart/form-data">
                     <form:hidden path="id"/>
                     <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                 <p class="card-description">
@@ -115,9 +116,9 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Image</label>
                             <div class="col-sm-9">
-                                <form:input type="file" cssClass="file-upload-default" path="img"/>
+                                <form:input type="file" cssClass="file-upload-default" placeholder="Upload Image" path="img"/>
                                 <div class="input-group col-xs-12">
-                                    <input type="text" class="form-control file-upload-info" placeholder="Upload Image"/>
+                                        <form:input cssClass="form-control file-upload-info" placeholder="Upload Image" path="image"/>
                                     <span class="input-group-append">
                                         <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
                                     </span>

@@ -23,8 +23,8 @@ public class Patient implements Serializable {
     @OneToMany(mappedBy = "patientid", fetch=FetchType.LAZY)
     private List<Bills> bill;
 
-    @OneToMany(mappedBy = "patientid", fetch = FetchType.LAZY)
-    private List<Appointment> appointment;
+//    @OneToMany(mappedBy = "patientid", fetch = FetchType.LAZY)
+//    private List<Appointment> appointment;
 
 //    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL)
 //    @PrimaryKeyJoinColumn
@@ -103,13 +103,13 @@ public class Patient implements Serializable {
         this.bill = bill;
     }
 
-    public List<Appointment> getAppointment() {
-        return appointment;
-    }
-
-    public void setAppointment(List<Appointment> appointment) {
-        this.appointment = appointment;
-    }
+//    public List<Appointment> getAppointment() {
+//        return appointment;
+//    }
+//
+//    public void setAppointment(List<Appointment> appointment) {
+//        this.appointment = appointment;
+//    }
 
     public Integer getCcid() {
         return ccid;

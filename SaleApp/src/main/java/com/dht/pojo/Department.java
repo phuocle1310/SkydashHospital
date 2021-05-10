@@ -13,6 +13,8 @@ public class Department implements Serializable {
 
     @OneToMany(mappedBy = "departmentid", fetch = FetchType.LAZY)
     private List<Doctor> doctor;
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    private List<Appointment> appointments;
 
     public String getId() {
         return id;
@@ -36,5 +38,13 @@ public class Department implements Serializable {
 
     public void setDoctor(List<Doctor> doctor) {
         this.doctor = doctor;
+    }
+
+    public List<Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public void setAppointments(List<Appointment> appointments) {
+        this.appointments = appointments;
     }
 }

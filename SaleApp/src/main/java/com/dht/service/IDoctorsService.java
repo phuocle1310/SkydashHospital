@@ -10,4 +10,5 @@ public interface IDoctorsService {
     boolean deleteDoctor(String doctorId);
     boolean addDoctor(Doctor doctor);
     boolean updateDoctor(Doctor doctor);
+    boolean isAdmin(String doctorId);
 }

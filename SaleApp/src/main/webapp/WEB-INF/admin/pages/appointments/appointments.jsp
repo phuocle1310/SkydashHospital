@@ -10,9 +10,9 @@
                     <div class="col-sm-4 col-3">
                         <p class="card-title">All Appointment</p>
                     </div>
-                    <div class="col-sm-8 col-9 text-right">
-                        <a href="/appointments/add-appointment" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Appointment</a>
-                    </div>
+<%--                    <div class="col-sm-8 col-9 text-right">--%>
+<%--                        <a href="/appointments/add-appointment" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Appointment</a>--%>
+<%--                    </div>--%>
                 </div>
 
                 <div class="row">
@@ -22,21 +22,26 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>User Name </th>
-                                    <th>Password</th>
-                                    <th>Role</th>
-                                    <th>Active</th>
+                                    <th>Name</th>
+                                    <th>CCID</th>
+                                    <th>Date Of Appointment</th>
+                                    <th>Email</th>
+                                    <th>Phone number</th>
+                                    <th>Department</th>
                                     <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <c:set var="i" value="0"/>
                                 <c:forEach items="${appointments}" var="appointment">
                                     <tr id="appointment${appointment.id}">
-                                        <td>${appointment.id}</td>
-                                        <td>${account.username}</td>
-                                        <td>${account.password}</td>
-                                        <td>${account.role}</td>
-                                        <td>${account.active}</td>
+                                        <td>${i = i+1}</td>
+                                        <td>${appointment.name}</td>
+                                        <td>${appointment.ccid}</td>
+                                        <td>${appointment.date}</td>
+                                        <td>${appointment.email}</td>
+                                        <td>${appointment.phone}</td>
+                                        <td>${appointment.department.name}</td>
                                         <td style="text-align: right">
                                             <div class="dropdown">
                                                 <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -46,7 +51,7 @@
                                                     <a class="dropdown-item" href="/appointments/edit-appointment/?appointmentId=${appointment.id}">
                                                         Edit
                                                     </a>
-                                                    <form onsubmit="return false;" action="/appointments/${appointment.id}" method="post" id="${appointment.id}">
+                                                    <form onsubmit="return false;" action="/appointments/delete/${appointment.id}" method="post" id="${appointment.id}">
                                                         <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${appointment.id}')">
                                                             Delete
                                                         </button>

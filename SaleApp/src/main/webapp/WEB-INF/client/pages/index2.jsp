@@ -1,3 +1,5 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%--<%@ page contentType="text/html;charset=UTF-8" language="java" %>--%>
 
@@ -233,14 +235,13 @@
 <section id="appointment" data-stellar-background-ratio="3">
     <div class="container">
         <div class="row">
-
             <div class="col-md-6 col-sm-6">
                 <img src="images/appointment-image.jpg" class="img-responsive" alt="">
             </div>
 
             <div class="col-md-6 col-sm-6">
                 <!-- CONTACT FORM HERE -->
-                <form id="appointment-form" role="form" method="post" action="#">
+                <form:form modelAttribute="client-appointment" role="form" method="post">
 
                     <!-- SECTION TITLE -->
                     <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
@@ -250,38 +251,37 @@
                     <div class="wow fadeInUp" data-wow-delay="0.8s">
                         <div class="col-md-6 col-sm-6">
                             <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Full Name">
+                            <form:input type="text" class="form-control" id="name" path="name" placeholder="Full Name"/>
                         </div>
 
                         <div class="col-md-6 col-sm-6">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email">
+                            <form:input type="email" cssClass="form-control" id="email" path="email" placeholder="Your Email"/>
                         </div>
 
                         <div class="col-md-6 col-sm-6">
-                            <label for="date">Select Date</label>
-                            <input type="date" name="date" value="" class="form-control">
+                            <label>Select Date</label>
+                            <form:input type="date" path="date" value="" cssClass="form-control"/>
                         </div>
 
                         <div class="col-md-6 col-sm-6">
-                            <label for="select">Select Department</label>
-                            <select class="form-control">
-                                <option>General Health</option>
-                                <option>Cardiology</option>
-                                <option>Dental</option>
-                                <option>Medical Research</option>
-                            </select>
+                            <label>Select Department</label>
+                            <form:select cssClass="form-control" path="department">
+                                <c:forEach items="${departmentss}" var="dep">
+                                    <option value="${dep.id}">${dep.name}</option>
+                                </c:forEach>
+                            </form:select>
                         </div>
 
                         <div class="col-md-12 col-sm-12">
-                            <label for="telephone">Phone Number</label>
+                            <label>Phone Number</label>
                             <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone">
-                            <label for="Message">Additional Message</label>
-                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>
+<%--                            <label for="Message">Additional Message</label>--%>
+<%--                            <textarea class="form-control" rows="5" id="message" name="message" placeholder="Message"></textarea>--%>
                             <button type="submit" class="form-control" id="cf-submit" name="submit">Submit Button</button>
                         </div>
                     </div>
-                </form>
+                </form:form>
             </div>
 
         </div>

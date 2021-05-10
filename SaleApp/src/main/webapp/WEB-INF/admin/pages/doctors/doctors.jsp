@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="row" style="border: #0B0F32">
@@ -13,6 +14,7 @@
                         <a href="/doctors/add-doctor" class="btn btn-outline-primary btn-sm"><i class="mdi mdi-account-plus"></i> Add Doctor</a>
                     </div>
                 </div>
+                <form:errors path="*" element="div" cssClass="alert alert-danger"/>
                 <c:set var="i" value="0"/>
                 <c:forEach items="${departments}" var="dep">
                     <div class="row">

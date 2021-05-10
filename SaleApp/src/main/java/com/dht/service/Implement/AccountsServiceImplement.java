@@ -52,7 +52,16 @@ public class AccountsServiceImplement implements IAccountsService {
 
     @Override
     public boolean updateAccount(Account account) {
+        account.setPassword(bCryptPasswordEncoder.encode(account.getPassword()));
         return this.accountsRepository.updateAccount(account);
+    }
+
+    @Override
+    public boolean isAdminAccount(String doctorId) {
+        Account a = this.accountsRepository.getAccountById(doctorId);
+        if(a.getRole().getId() == 1)
+            return true;
+        return false;
     }
 
     @Override

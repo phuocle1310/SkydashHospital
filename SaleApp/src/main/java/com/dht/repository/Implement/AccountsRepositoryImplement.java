@@ -62,7 +62,6 @@ public class AccountsRepositoryImplement implements IAccountsRepository {
     @Transactional
     public boolean addAccount(Account account) {
         try {
-//            account.setPassword(bCryptPasswordEncoder.encode(account.getPassword()));
             currentSession().save(account);
             return true;
         } catch (HibernateException ex) {
@@ -75,7 +74,6 @@ public class AccountsRepositoryImplement implements IAccountsRepository {
     @Transactional
     public boolean updateAccount(Account account) {
         try {
-//            bCryptPasswordEncoder.encode(account.getPassword());
             currentSession().update(account);
             return true;
         } catch (HibernateException ex) {

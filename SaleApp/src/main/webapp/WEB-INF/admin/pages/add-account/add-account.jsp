@@ -46,7 +46,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">User Name</label>
                             <div class="col-sm-9">
-                                <form:input cssClass="form-control" path="username" />
+                                <form:input cssClass="form-control" path="username" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -56,7 +56,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Password</label>
                             <div class="col-sm-9">
-                                <form:input type="password" cssClass="form-control" path="password" />
+                                <form:input type="password" cssClass="form-control" path="password" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Confirm Password</label>
                             <div class="col-sm-9">
-                                <form:input type="password" cssClass="form-control" path="confirmPassword" />
+                                <form:input type="password" cssClass="form-control" path="confirmPassword" required="true;"/>
                             </div>
                         </div>
                     </div>

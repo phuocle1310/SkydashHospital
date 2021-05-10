@@ -7,7 +7,7 @@ import java.util.List;
 public interface IAppointmentsService {
     List<Appointment> getAllAppointment();
     Appointment getAppointmentById(String id);
-    boolean deleteAppointment(String appoinmentId);
+    boolean deleteAppointment(int appoinmentId);
     boolean addAppointment(Appointment appoinment);
     boolean updateAppointment(Appointment appoinment);
 }

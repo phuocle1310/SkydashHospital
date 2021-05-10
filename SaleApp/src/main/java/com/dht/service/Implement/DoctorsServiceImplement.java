@@ -1,5 +1,6 @@
 package com.dht.service.Implement;
 
+import com.dht.pojo.Account;
 import com.dht.pojo.Doctor;
 import com.dht.repository.IDoctorsRepository;
 import com.dht.service.IDoctorsService;
@@ -37,5 +38,20 @@ public class DoctorsServiceImplement implements IDoctorsService {
     @Override
     public boolean updateDoctor(Doctor doctor) {
         return this.doctorsRepository.updateDoctor(doctor);
+    }
+
+    @Override
+    public boolean isAdmin(String doctorId) {
+        Account a = this.doctorsRepository.getDoctorById(doctorId).getAccount();
+        if(a == null)
+            return false;
+        else {
+            int i = a.getRole().getId();
+            if(i == 1) {
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

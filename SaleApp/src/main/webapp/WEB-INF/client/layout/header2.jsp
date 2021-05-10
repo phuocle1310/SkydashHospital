@@ -25,6 +25,7 @@
                 <li><a href="#news" class="smoothScroll">News</a></li>
                 <li><a href="#google-map" class="smoothScroll">Contact</a></li>
                 <li class="appointment-btn"><a href="#appointment">Make an appointment</a></li>
+                <li><a href="/login" class="smoothScroll">Login</a></li>
             </ul>
         </div>
 

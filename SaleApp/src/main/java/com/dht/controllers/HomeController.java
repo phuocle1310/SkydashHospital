@@ -7,6 +7,7 @@ package com.dht.controllers;
 
 
 import com.dht.service.IDepartmentsService;
+import com.dht.service.IDoctorsService;
 import com.dht.service.IPatientsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.*;
  */
 @Controller
 public class HomeController {
+
+    @Autowired
+    private IDoctorsService doctorsService;
 
     @RequestMapping("/home")
     public String index() {

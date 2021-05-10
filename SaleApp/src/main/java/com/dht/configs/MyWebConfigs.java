@@ -5,15 +5,20 @@
  */
 package com.dht.configs;
 
+import com.dht.formatter.AppointmentFormatter;
 import com.dht.formatter.DepartmentFormatter;
 import com.dht.formatter.DoctorFormatter;
 import com.dht.formatter.RoleFormatter;
+import org.hibernate.cfg.AvailableSettings;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.env.Environment;
 import org.springframework.format.FormatterRegistry;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -21,12 +26,17 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.util.Properties;
+
 
 @Configuration
 @EnableWebMvc
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"com.dht.controllers", "com.dht.repository", "com.dht.service"})
 public class MyWebConfigs implements WebMvcConfigurer {
+
+    @Autowired
+    private Environment env;
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -71,12 +81,30 @@ public class MyWebConfigs implements WebMvcConfigurer {
         registry.addFormatter(new DepartmentFormatter());
         registry.addFormatter(new RoleFormatter());
         registry.addFormatter(new DoctorFormatter());
+        registry.addFormatter(new AppointmentFormatter());
     }
 
     @Bean
     public CommonsMultipartResolver multipartResolver() {
         CommonsMultipartResolver resolver = new CommonsMultipartResolver();
         resolver.setDefaultEncoding("utf-8");
+        resolver.setMaxUploadSize(20971520);
+        resolver.setMaxInMemorySize(1048576);
         return resolver;
+    }
+
+    @Bean
+    public JavaMailSenderImpl mailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.gmail.com");
+        mailSender.setPort(587);
+        mailSender.setUsername("1851050120phuoc@ou.edu.vn");
+        mailSender.setPassword("0961032543sq");
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.debug", "true");
+        return mailSender;
     }
 }

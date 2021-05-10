@@ -18,7 +18,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Name</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="name" />
+                                <form:input type="text" cssClass="form-control" path="name" required="true;" />
                             </div>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Date of Birth</label>
                             <div class="col-sm-9">
-                                <form:input type="date" cssClass="form-control" path="dateOfBirth"/>
+                                <form:input type="date" cssClass="form-control" path="dateOfBirth" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">CCID</label>
                             <div class="col-sm-9">
-                                <form:input cssClass="form-control" path="ccid" />
+                                <form:input cssClass="form-control" path="ccid" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -44,7 +44,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Disease</label>
                             <div class="col-sm-9">
-                                <form:input cssClass="form-control" path="disease"/>
+                                <form:input cssClass="form-control" path="disease" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Email</label>
                             <div class="col-sm-9">
-                                <form:input type="email" cssClass="form-control" path="email"/>
+                                <form:input type="email" cssClass="form-control" path="email" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -62,7 +62,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Phone Number</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="phone"/>
+                                <form:input type="text" cssClass="form-control" path="phone" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -72,7 +72,7 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Address</label>
                             <div class="col-sm-9">
-                                <form:input type="text" cssClass="form-control" path="address"/>
+                                <form:input type="text" cssClass="form-control" path="address" required="true;"/>
                             </div>
                         </div>
                     </div>
@@ -102,47 +102,6 @@
                         </div>
                     </div>
                 </div>
-<%--                <div class="row">--%>
-<%--                    <div class="col-md-6">--%>
-<%--                        <div class="form-group row">--%>
-<%--                            <label class="col-sm-3 col-form-label">User Name</label>--%>
-<%--                            <div class="col-sm-9">--%>
-<%--                                <input type="text" class="form-control" />--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                    <div class="col-md-6">--%>
-<%--                        <div class="form-group row">--%>
-<%--                            <label class="col-sm-3 col-form-label">Password</label>--%>
-<%--                            <div class="col-sm-9">--%>
-<%--                                <input type="password" class="form-control" />--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
-<%--                <div class="row">--%>
-<%--                    <div class="col-md-6">--%>
-<%--                        <div class="form-group row">--%>
-<%--                            <label class="col-sm-3 col-form-label">Status</label>--%>
-<%--                            <div class="col-sm-4">--%>
-<%--                                <div class="form-check">--%>
-<%--                                    <label class="form-check-label">--%>
-<%--                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios3" value="" checked>--%>
-<%--                                        Active--%>
-<%--                                    </label>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                            <div class="col-sm-5">--%>
-<%--                                <div class="form-check">--%>
-<%--                                    <label class="form-check-label">--%>
-<%--                                        <input type="radio" class="form-check-input" name="membershipRadios2" id="membershipRadios4" value="option2">--%>
-<%--                                        Inactive--%>
-<%--                                    </label>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
                 <div class="row">
                     <div class="col-sm-12 text-right">
                         <button type="submit" class="btn btn-outline-primary">
