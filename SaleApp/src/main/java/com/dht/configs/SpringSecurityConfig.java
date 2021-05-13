@@ -43,8 +43,9 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/patients").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/doctors").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
+                .antMatchers("/departments").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/accounts").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
-        .antMatchers("/doctorschedules").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
+        .antMatchers("/shifts").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/appointments").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/bills").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/drugs").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
@@ -52,7 +53,11 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
         .antMatchers("/**/patients/add-patient").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/patients/edit-patient").access("hasAnyRole('ROLE_ADMIN', 'ROLE_DOCTOR')")
         .antMatchers("/doctors/add-doctor").access("hasAnyRole('ROLE_ADMIN')")
-        .antMatchers("/doctors/edit-doctor").access("hasAnyRole('ROLE_ADMIN')");
+        .antMatchers("/doctors/edit-doctor").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/shifts/add-shift").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/shifts/edit-shift").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/departments/add-department").access("hasAnyRole('ROLE_ADMIN')")
+                .antMatchers("/departments/edit-department").access("hasAnyRole('ROLE_ADMIN')");
         http.csrf().disable();
     }
 

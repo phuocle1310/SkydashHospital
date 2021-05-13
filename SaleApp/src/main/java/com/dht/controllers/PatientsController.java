@@ -40,7 +40,7 @@ public class PatientsController {
     @PostMapping("/edit-patient")
     public String editpatient(@ModelAttribute(value = "patient") @Valid Patient p, BindingResult err) {
         if(err.hasErrors())
-            return "edit-patient";
+            return "redirect:/patients";
         if(!this.patientsService.updatePatient(p)) {
             return "redirect:/";
         }

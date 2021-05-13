@@ -9,9 +9,7 @@ import java.io.Serializable;
 public class Account implements Serializable {
     @Id
     private String id;
-    @Size(min = 3, max = 20, message = "Username tu 3 den 20 ky tu")
     private String username;
-    @Size(min = 3, max = 20, message = "Password tu 3 den 20 ky tu")
     private String password;
 
     @ManyToOne

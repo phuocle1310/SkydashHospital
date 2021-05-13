@@ -24,7 +24,6 @@
                                     <th>Id</th>
                                     <th>Doctor Name</th>
                                     <th>User Name </th>
-                                    <th>Password</th>
                                     <th>Role</th>
                                     <th>Action</th>
                                 </tr>
@@ -36,7 +35,6 @@
                                         <td>${i = i+1}</td>
                                         <td>${account.doctor.name}</td>
                                         <td>${account.username}</td>
-                                        <td>${account.password}</td>
                                         <td>${account.role.role}</td>
                                         <td style="text-align: right">
                                             <div class="dropdown">
