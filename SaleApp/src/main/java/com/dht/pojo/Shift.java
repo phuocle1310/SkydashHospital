@@ -10,6 +10,7 @@ public class Shift implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    private String name;
     private int begin;
     private int end;
 
@@ -46,5 +47,13 @@ public class Shift implements Serializable {
 
     public void setShiftDetail(List<ShiftDetail> shiftDetail) {
         this.shiftDetail = shiftDetail;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

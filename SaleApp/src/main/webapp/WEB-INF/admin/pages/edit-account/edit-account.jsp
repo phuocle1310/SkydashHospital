@@ -9,6 +9,7 @@
             <h4 class="card-title">Edit Account</h4>
             <form:form method="post" modelAttribute="account" cssClass="form-sample">
                 <form:errors path="*" element="div" cssClass="alert alert-danger" />
+                <form:hidden path="id"/>
                 <p class="card-description">
                     Accounts Info
                 </p>

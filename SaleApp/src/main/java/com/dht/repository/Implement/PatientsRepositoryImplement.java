@@ -66,6 +66,11 @@ public class PatientsRepositoryImplement implements IPatientsRepository {
     }
 
     @Override
+    public Patient getPatientByCCID(String ccid) {
+        return currentSession().get(Patient.class, ccid);
+    }
+
+    @Override
     @Transactional
     public boolean addPatient(Patient patient) {
         try {

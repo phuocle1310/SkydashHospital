@@ -6,8 +6,8 @@ import java.util.List;
 
 public interface IShiftsService {
     List<Shift> getAllShift();
-    Shift getShiftById(String id);
-    boolean deleteShift(String shiftId);
+    Shift getShiftById(int id);
+    boolean deleteShift(int shiftId);
     boolean addShift(Shift shift);
     boolean updateShift(Shift shift);
 }

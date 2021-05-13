@@ -18,7 +18,8 @@
                         <div class="form-group row">
                             <label class="col-sm-3 col-form-label">Doctor Name</label>
                             <div class="col-sm-9">
-                                <form:select cssClass="form-control" path="doctor">
+                                <form:select cssClass="form-control" path="doctor" id="doctor" onchange="isNull()">
+                                    <option value="">Choose the doctor</option>
                                     <c:forEach items="${doctors}" var="doctor">
                                         <c:if test="${doctor.account.id == null}">
                                             <option value="${doctor.id}">${doctor.name}</option>
@@ -73,7 +74,7 @@
                 </div>
                 <div class="row">
                     <div class="col-sm-12 text-right">
-                        <button type="submit" class="btn btn-outline-primary">
+                        <button type="submit" class="btn btn-outline-primary" id="create" disabled>
                             <div class="row">
                                 <div class="col-sm-1"><i class="mdi mdi-account-plus"></i></div>
                                 <div class="col-sm-9"><strong> Create Account</strong></div>

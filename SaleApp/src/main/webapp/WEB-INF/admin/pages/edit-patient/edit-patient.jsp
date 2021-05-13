@@ -7,7 +7,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Edit Patient</h4>
-<%--                <form:errors path="*" element="div" cssClass="alert alert-danger" />--%>
+                <form:errors path="*" element="div" cssClass="alert alert-danger" />
                 <p class="card-description">
                     Patient Info
                 </p>

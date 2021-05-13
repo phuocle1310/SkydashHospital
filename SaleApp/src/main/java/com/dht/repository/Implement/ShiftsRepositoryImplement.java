@@ -33,13 +33,13 @@ public class ShiftsRepositoryImplement implements IShiftsRepository {
 
     @Override
     @Transactional
-    public Shift getShiftById(String id) {
+    public Shift getShiftById(int id) {
         return currentSession().get(Shift.class, id);
     }
 
     @Override
     @Transactional
-    public boolean deleteShift(String shiftId) {
+    public boolean deleteShift(int shiftId) {
         try {
             Shift p = currentSession().get(Shift.class, shiftId);
             currentSession().delete(p);

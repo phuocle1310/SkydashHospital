@@ -11,9 +11,9 @@ public class Department implements Serializable {
     private String id;
     private String name;
 
-    @OneToMany(mappedBy = "departmentid", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "departmentid", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Doctor> doctor;
-    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "department", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private List<Appointment> appointments;
 
     public String getId() {

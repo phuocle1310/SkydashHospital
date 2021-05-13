@@ -48,9 +48,6 @@ public class HomeController {
      * Cac trang bills
      */
 
-    @RequestMapping("/bills")
-    public String bills() {
-        return "bills";
-    }
+
 
 }

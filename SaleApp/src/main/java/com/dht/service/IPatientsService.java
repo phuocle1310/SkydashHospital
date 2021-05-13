@@ -10,4 +10,5 @@ public interface IPatientsService {
     boolean deletePatient(String patientId);
     boolean addPatient(Patient patient);
     boolean updatePatient(Patient patient);
+    Patient getPatientByCCID(String ccid);
 }

@@ -1,6 +1,7 @@
 package com.dht.pojo;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -8,6 +9,7 @@ import java.io.Serializable;
 public class Account implements Serializable {
     @Id
     private String id;
+    @Size(min = 3, max = 20, message = "Tu 3 den 20 ky tu")
     private String username;
     private String password;
 

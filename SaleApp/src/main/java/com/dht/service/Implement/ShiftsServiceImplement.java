@@ -19,12 +19,12 @@ public class ShiftsServiceImplement implements IShiftsService {
     }
 
     @Override
-    public Shift getShiftById(String id) {
+    public Shift getShiftById(int id) {
         return this.shiftsRepository.getShiftById(id);
     }
 
     @Override
-    public boolean deleteShift(String shiftId) {
+    public boolean deleteShift(int shiftId) {
         return this.shiftsRepository.deleteShift(shiftId);
     }
 

@@ -6,6 +6,8 @@
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout/base.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout/header.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout/sidebar.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/layout" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-bill/add-bill.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-bill" />
+        <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-bill/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-bill" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-doctor/add-doctor.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-doctor" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-patient/add-patient.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/add-patient" />
         <entry key="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors/body-plugin.jsp" value="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/admin/pages/doctors" />

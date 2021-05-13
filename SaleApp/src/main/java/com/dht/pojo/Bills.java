@@ -17,6 +17,11 @@ public class Bills implements Serializable {
     private Date date;
     private int total;
 
+    @Transient
+    private String ccid;
+    @Transient
+    private String str;
+
     @OneToMany(mappedBy = "bill")
     private Set<BillDetails> billDetail;
 
@@ -60,5 +65,21 @@ public class Bills implements Serializable {
 
     public void setBillDetail(Set<BillDetails> billDetail) {
         this.billDetail = billDetail;
+    }
+
+    public String getCcid() {
+        return ccid;
+    }
+
+    public void setCcid(String ccid) {
+        this.ccid = ccid;
+    }
+
+    public String getStr() {
+        return str;
+    }
+
+    public void setStr(String str) {
+        this.str = str;
     }
 }

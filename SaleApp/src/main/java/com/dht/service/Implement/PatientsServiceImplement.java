@@ -39,4 +39,9 @@ public class PatientsServiceImplement implements IPatientsService {
     public boolean updatePatient(Patient patient) {
         return this.patientsRepository.updatePatient(patient);
     }
+
+    @Override
+    public Patient getPatientByCCID(String ccid) {
+        return this.patientsRepository.getPatientByCCID(ccid);
+    }
 }

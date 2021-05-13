@@ -180,6 +180,52 @@ Software Foundation//DTD Tiles Configuration 3.0//EN"
         <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/accounts/body-plugin.jsp" />
     </definition>
 
+<!--    Cac trang departments-->
+
+    <definition name = "edit-department" extends="base">
+        <put-attribute name="title" value="Edit department" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/edit-department/edit-department.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/edit-department/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/edit-department/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "add-department" extends="base">
+        <put-attribute name="title" value="Add department" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/add-department/add-department.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/add-department/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/add-department/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "departments" extends="base">
+        <put-attribute name="title" value="All Departments" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/departments/departments.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/departments/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/departments/body-plugin.jsp" />
+    </definition>
+
+<!--    Cac trang shift-->
+
+    <definition name = "edit-shift" extends="base">
+        <put-attribute name="title" value="Edit shift" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/edit-shift/edit-shift.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/edit-shift/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/edit-shift/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "add-shift" extends="base">
+        <put-attribute name="title" value="Add shift" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/add-shift/add-shift.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/add-shift/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/add-shift/body-plugin.jsp" />
+    </definition>
+
+    <definition name = "shifts" extends="base">
+        <put-attribute name="title" value="All Shifts" />
+        <put-attribute name="body" value="/WEB-INF/admin/pages/shifts/shifts.jsp" />
+        <put-attribute name="head-plugin" value="/WEB-INF/admin/pages/shifts/head-plugin.jsp" />
+        <put-attribute name="body-plugin" value="/WEB-INF/admin/pages/shifts/body-plugin.jsp" />
+    </definition>
+
 <!--    Trang Login & Sign Up-->
     <definition name="login" template="/WEB-INF/admin/pages/login/login.jsp">
         <put-attribute name="title" value="Welcome to our Hospital" />

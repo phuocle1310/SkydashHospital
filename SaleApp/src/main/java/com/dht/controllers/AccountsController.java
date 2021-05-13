@@ -53,12 +53,14 @@ public class AccountsController {
     public String editAccount(@ModelAttribute(value = "account") @Valid Account p, BindingResult err) {
         if(err.hasErrors())
             return "redirect:/doctors";
-        System.out.println("pass word : " + p.getPassword());
-        if(!this.accountsService.updateAccount(p)) {
+        if(!p.getPassword().equals(p.getConfirmPassword()))
             return "redirect:/";
+        else {
+            if (!this.accountsService.updateAccount(p))
+                return "redirect:/home";
+            else
+                return "redirect:/accounts";
         }
-        else
-            return "redirect:/accounts";
     }
 
     @GetMapping("/add-account")
@@ -70,14 +72,17 @@ public class AccountsController {
     }
 
     @PostMapping("/add-account")
-    public String addAccount(@ModelAttribute("addaccount") Account p, BindingResult err) {
+    public String addAccount(@ModelAttribute("addaccount") @Valid Account p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/doctors";
-        if(!this.accountsService.addAccount(p))
+            return "add-account";
+//            return "redirect:/doctors";
+        if(!p.getPassword().equals(p.getConfirmPassword()))
             return "redirect:/";
-        return "redirect:/accounts";
+        else {
+            if (!this.accountsService.addAccount(p))
+                return "redirect:/home";
+            else
+                return "redirect:/accounts";
+        }
     }
-
-
-
 }
