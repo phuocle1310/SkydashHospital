@@ -55,7 +55,7 @@ public class AppointmentController {
     @PostMapping("/edit-appoinment")
     public String editAppointment(@ModelAttribute(value = "appoinment") @Valid Appointment p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "edit-appoinment";
         if(!this.appointmentsService.updateAppointment(p)) {
             return "redirect:/";
         }
@@ -75,7 +75,7 @@ public class AppointmentController {
     public String addAppointment(@ModelAttribute("addappointment") Appointment a,
                                  @PathVariable("patientId") String patientId, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "add-appointment";
         Patient p = this.patientsService.getPatientById(patientId);
         a.setName(p.getName());
         a.setCcid(p.getCcid());

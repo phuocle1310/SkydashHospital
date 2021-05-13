@@ -1,6 +1,10 @@
 package com.dht.pojo;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
@@ -10,25 +14,24 @@ import java.util.List;
 public class Patient implements Serializable {
     @Id
     private String id;
+    @NotNull(message = "Khong duoc de trong")
+    @Size(min = 3, max = 30, message = "Ten tu 3 den 30 ky tu")
     private String name;
-    private Integer ccid;
+    @Pattern(regexp = "\\d{9}", message = "CCID khong ton tai")
+    private String ccid;
     private Date dateOfBirth;
     private String gender;
     private String disease;
+    @NotNull(message = "Khong duoc de trong")
+    @Pattern(regexp = "^[A-Za-z0-9+_.-]+@ou.edu.vn$", message = "Email phai la @ou.edu.vn")
     private String email;
+    @Pattern(regexp = "\\d{10}", message = "Phone number khong ton tai")
     private String phone;
     private String address;
 
 
     @OneToMany(mappedBy = "patientid", fetch=FetchType.LAZY)
     private List<Bills> bill;
-
-//    @OneToMany(mappedBy = "patientid", fetch = FetchType.LAZY)
-//    private List<Appointment> appointment;
-
-//    @OneToOne(mappedBy = "patient", cascade = CascadeType.ALL)
-//    @PrimaryKeyJoinColumn
-//    private Account account;
 
     public String getId() {
         return id;
@@ -103,27 +106,12 @@ public class Patient implements Serializable {
         this.bill = bill;
     }
 
-//    public List<Appointment> getAppointment() {
-//        return appointment;
-//    }
-//
-//    public void setAppointment(List<Appointment> appointment) {
-//        this.appointment = appointment;
-//    }
-
-    public Integer getCcid() {
+    public String getCcid() {
         return ccid;
     }
 
-    public void setCcid(Integer ccid) {
+    public void setCcid(String ccid) {
         this.ccid = ccid;
     }
 
-    //    public Account getAccount() {
-//        return account;
-//    }
-//
-//    public void setAccount(Account account) {
-//        this.account = account;
-//    }
 }

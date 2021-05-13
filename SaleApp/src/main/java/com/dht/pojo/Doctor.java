@@ -13,7 +13,7 @@ public class Doctor implements Serializable {
     @Id
     private String id;
     private String name;
-    private Integer ccid;
+    private String ccid;
     private Date dateOfBirth;
     private String gender;
     private String image;
@@ -110,21 +110,13 @@ public class Doctor implements Serializable {
         this.address = address;
     }
 
-    public Integer getCcid() {
+    public String getCcid() {
         return ccid;
     }
 
-    public void setCcid(Integer ccid) {
+    public void setCcid(String ccid) {
         this.ccid = ccid;
     }
-
-//    public List<Appointment> getAppointment() {
-//        return appointment;
-//    }
-//
-//    public void setAppointment(List<Appointment> appointment) {
-//        this.appointment = appointment;
-//    }
 
     public Account getAccount() {
         return account;

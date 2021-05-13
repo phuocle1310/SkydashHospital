@@ -19,8 +19,8 @@
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/doctors">All Doctors</a></li>
                     <li class="nav-item"> <a class="nav-link" href="/doctors/add-doctor">Add Doctor</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorschedules" /> ">All Doctor Schedule</a></li>
-                    <li class="nav-item"><a class="nav-link" href="<c:url value="/doctorchedules/add-doctorschedule" /> ">Add Doctor Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/doctorchedules">All Doctor Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/doctorchedules/add-doctorschedule">Add Doctor Schedule</a></li>
                 </ul>
             </div>
         </li>

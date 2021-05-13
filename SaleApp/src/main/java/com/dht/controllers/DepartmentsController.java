@@ -40,7 +40,7 @@ public class DepartmentsController {
     @PostMapping("/edit-department")
     public String editdepartment(@ModelAttribute(value = "department") @Valid Department p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "edit-department";
         if(!this.departmentsService.updateDepartment(p)) {
             return "redirect:/";
         }
@@ -55,9 +55,9 @@ public class DepartmentsController {
     }
 
     @PostMapping("/add-department")
-    public String addDepartment(@ModelAttribute("adddepartment") Department p, BindingResult err) {
+    public String addDepartment(@ModelAttribute("adddepartment") @Valid Department p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/doctors";
+            return "add-department";
         if(!this.departmentsService.addDepartment(p))
             return "redirect:/";
         return "redirect:/departments";

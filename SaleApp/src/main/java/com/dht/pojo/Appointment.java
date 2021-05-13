@@ -1,6 +1,8 @@
 package com.dht.pojo;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 import java.sql.Date;
 
@@ -14,7 +16,7 @@ public class Appointment implements Serializable {
     private Date date;
     private String email;
     private String phone;
-    private Integer ccid;
+    private String ccid;
 
     @ManyToOne
     @JoinColumn(name="departmentid")
@@ -83,11 +85,11 @@ public class Appointment implements Serializable {
         this.phone = phone;
     }
 
-    public Integer getCcid() {
+    public String getCcid() {
         return ccid;
     }
 
-    public void setCcid(Integer ccid) {
+    public void setCcid(String ccid) {
         this.ccid = ccid;
     }
 

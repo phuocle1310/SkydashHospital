@@ -37,12 +37,10 @@ public class PatientsController {
         return "edit-patient";
     }
 
-
-
     @PostMapping("/edit-patient")
     public String editpatient(@ModelAttribute(value = "patient") @Valid Patient p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "edit-patient";
         if(!this.patientsService.updatePatient(p)) {
             return "redirect:/";
         }
@@ -57,9 +55,9 @@ public class PatientsController {
     }
 
     @PostMapping("/add-patient")
-    public String addpatient(@ModelAttribute("addpatient") Patient p, BindingResult err) {
+    public String addpatient(@ModelAttribute("addpatient") @Valid Patient p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/doctors";
+            return "add-patient";
         if(!this.patientsService.addPatient(p))
             return "redirect:/";
         return "redirect:/patients";

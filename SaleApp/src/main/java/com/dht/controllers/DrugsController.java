@@ -41,7 +41,7 @@ public class DrugsController {
     @PostMapping("/edit-drug")
     public String editDrug(@ModelAttribute("drug") @Valid Drugs p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/";
+            return "edit-drug";
         if(!this.drugsService.updateDrugs(p)) {
             return "redirect:/";
         }
@@ -56,9 +56,9 @@ public class DrugsController {
     }
 
     @PostMapping("/add-drug")
-    public String addDrug(@ModelAttribute("adddrug") Drugs p, BindingResult err) {
+    public String addDrug(@ModelAttribute("adddrug") @Valid Drugs p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/doctors";
+            return "add-drug";
         if(!this.drugsService.addDrugs(p))
             return "redirect:/";
         return "redirect:/drugs";

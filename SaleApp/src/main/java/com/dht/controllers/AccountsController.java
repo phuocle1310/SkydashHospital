@@ -52,7 +52,7 @@ public class AccountsController {
     @PostMapping("/edit-account")
     public String editAccount(@ModelAttribute(value = "account") @Valid Account p, BindingResult err) {
         if(err.hasErrors())
-            return "redirect:/doctors";
+            return "edit-account";
         if(!p.getPassword().equals(p.getConfirmPassword()))
             return "redirect:/";
         else {
@@ -75,7 +75,6 @@ public class AccountsController {
     public String addAccount(@ModelAttribute("addaccount") @Valid Account p, BindingResult err) {
         if(err.hasErrors())
             return "add-account";
-//            return "redirect:/doctors";
         if(!p.getPassword().equals(p.getConfirmPassword()))
             return "redirect:/";
         else {
