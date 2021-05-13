@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <div class="row">
     <div class="col-md-12 grid-margin stretch-card">
@@ -41,15 +41,18 @@
                                                 <button type="button" class="btn btn-outline-info dropdown-toggle" id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="ti-settings"></i>
                                                 </button>
+                                                <sec:authorize access="hasRole('ROLE_ADMIN')">
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
                                                     <a class="dropdown-item" href="/accounts/edit-account/?accountId=${account.doctor.id}">
                                                         Edit
                                                     </a>
+
                                                     <form onsubmit="return false;" action="/accounts/delete/${account.doctor.id}" method="post" id="${account.doctor.id}">
                                                         <button type="submit" class="dropdown-item" onclick="alert('warning-message-and-cancel','${account.doctor.id}')">
                                                             Delete
                                                         </button>
                                                     </form>
+                                                    </sec:authorize>
 
                                                 </div>
                                             </div>

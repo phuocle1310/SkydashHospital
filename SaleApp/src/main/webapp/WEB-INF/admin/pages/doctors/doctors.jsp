@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="row" style="border: #0B0F32">
@@ -41,6 +42,7 @@
                                         <button type="button" class="btn btn-sm " id="dropdownMenuIconButton3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="ti-settings"></i>
                                         </button>
+                                        <sec:authorize access="hasRole('ROLE_ADMIN')">
                                         <div class="dropdown-menu" aria-labelledby="dropdownMenuIconButton3">
                                             <a class="dropdown-item" href="/doctors/edit-doctor/?doctorId=${doctor.id}" >Edit</a>
                                             <form onsubmit="return false;" action="/doctors/delete/${doctor.id}" method="post" id="${doctor.id}">
@@ -49,6 +51,7 @@
                                                 </button>
                                             </form>
                                         </div>
+                                        </sec:authorize>
                                     </div>
                                 </div>
                             </div>
