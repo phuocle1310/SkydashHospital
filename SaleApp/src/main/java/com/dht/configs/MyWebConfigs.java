@@ -53,22 +53,7 @@ public class MyWebConfigs implements WebMvcConfigurer {
         registry.addResourceHandler("/fonts/**").addResourceLocations("/resources/fonts/");
         registry.addResourceHandler("/scss/**").addResourceLocations("/resources/scss/");
         registry.addResourceHandler("/vendors/**").addResourceLocations("/resources/vendors/");
-
-//        Cac trang client
-//        registry.addResourceHandler("/client/css/**").addResourceLocations("resources/client/css/");
-//        registry.addResourceHandler("/client/fonts/**").addResourceLocations("resources/client/fonts/");
-//        registry.addResourceHandler("/client/images/**").addResourceLocations("resources/client/images/");
-//        registry.addResourceHandler("/client/js/**").addResourceLocations("resources/client/js/");
     }
-    
-//    @Bean
-//    public InternalResourceViewResolver getInternalResourceViewResolver() {
-//        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-//        resolver.setViewClass(JstlView.class);
-//        resolver.setPrefix("/WEB-INF/jsp/");
-//        resolver.setSuffix(".jsp");
-//        return resolver;
-//    }
     
     @Bean
     public MessageSource messageSource() {

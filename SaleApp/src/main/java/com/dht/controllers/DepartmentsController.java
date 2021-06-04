@@ -38,9 +38,9 @@ public class DepartmentsController {
 
 
     @PostMapping("/edit-department")
-    public String editdepartment(@ModelAttribute(value = "department") @Valid Department p, BindingResult err) {
+    public String editdepartment(@ModelAttribute(value = "department") Department p, BindingResult err) {
         if(err.hasErrors())
-            return "edit-department";
+            return "redirect:/departments";
         if(!this.departmentsService.updateDepartment(p)) {
             return "redirect:/";
         }
