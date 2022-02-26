@@ -23,9 +23,9 @@ DROP TABLE IF EXISTS `account`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `account` (
-  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `username` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `password` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `username` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `roleid` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_account_role_idx` (`roleid`),
@@ -40,6 +40,7 @@ CREATE TABLE `account` (
 
 LOCK TABLES `account` WRITE;
 /*!40000 ALTER TABLE `account` DISABLE KEYS */;
+INSERT INTO `account` VALUES ('0c22a5f9-c3ee-4580-9abe-2ffb9e0dff88','admin','$2a$10$LwvDjIhUhvzEfuPwpJfg5O1pJkY6ZT.DZQ2mSuOAJzMQAjR.toWnW',1);
 /*!40000 ALTER TABLE `account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -52,16 +53,16 @@ DROP TABLE IF EXISTS `appointment`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `appointment` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `patientid` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `doctorid` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
-  `description` varchar(250) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(250) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ccid` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `departmentid` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_appointment_doctor` (`doctorid`),
-  KEY `fk_appointment_patient` (`patientid`),
-  CONSTRAINT `fk_appointment_doctor` FOREIGN KEY (`doctorid`) REFERENCES `doctor` (`id`),
-  CONSTRAINT `fk_appointment_patient` FOREIGN KEY (`patientid`) REFERENCES `patient` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  KEY `fk_idx` (`departmentid`),
+  CONSTRAINT `fk_appointment_department` FOREIGN KEY (`departmentid`) REFERENCES `department` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -70,6 +71,7 @@ CREATE TABLE `appointment` (
 
 LOCK TABLES `appointment` WRITE;
 /*!40000 ALTER TABLE `appointment` DISABLE KEYS */;
+INSERT INTO `appointment` VALUES (1,'Le Huu Phuoc','2022-02-16','1851050120phuoc@ou.edu.vn','+84961032543',NULL,'1'),(2,'Le Huu Phuoc','2022-02-16','lehuuphuoc.tb1@gmail.com','+84961032543',NULL,'1'),(3,'Le Huu Phuoc','2022-02-16','lehuuphuoc.tb1@gmail.com','+84961032543',NULL,'1'),(4,'Le Huu Phuoc','2022-02-16','lehuuphuoc.tb1@gmail.com','+84961032543',NULL,'1'),(5,'Le Huu Phuoc','2022-02-16','lehuuphuoc.tb1@gmail.com','+10961032543',NULL,'1');
 /*!40000 ALTER TABLE `appointment` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -81,7 +83,7 @@ DROP TABLE IF EXISTS `billdetails`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `billdetails` (
-  `billid` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `billid` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `drugid` int NOT NULL,
   `amount` int DEFAULT NULL,
   PRIMARY KEY (`billid`,`drugid`),
@@ -108,8 +110,8 @@ DROP TABLE IF EXISTS `bills`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `bills` (
-  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `patientid` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `patientid` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
   `total` int DEFAULT NULL,
   PRIMARY KEY (`id`),
@@ -135,8 +137,8 @@ DROP TABLE IF EXISTS `department`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `department` (
-  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -159,16 +161,16 @@ DROP TABLE IF EXISTS `doctor`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `doctor` (
-  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `departmentid` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `departmentid` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ccid` int DEFAULT NULL,
   `dateofbirth` date DEFAULT NULL,
-  `gender` varchar(6) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `image` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `image` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_doctor_department` (`departmentid`),
   CONSTRAINT `fk_doctor_department` FOREIGN KEY (`departmentid`) REFERENCES `department` (`id`)
@@ -194,10 +196,10 @@ DROP TABLE IF EXISTS `drugs`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `drugs` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `unit` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `unit` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` decimal(10,0) DEFAULT NULL,
-  `decription` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `decription` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -220,15 +222,15 @@ DROP TABLE IF EXISTS `patient`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `patient` (
-  `id` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `id` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ccid` int DEFAULT NULL,
   `dateofbirth` date DEFAULT NULL,
-  `gender` varchar(6) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `disease` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `email` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(12) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gender` varchar(6) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `disease` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -252,7 +254,7 @@ DROP TABLE IF EXISTS `role`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `role` (
   `id` int NOT NULL,
-  `role` varchar(45) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` varchar(45) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -299,7 +301,7 @@ DROP TABLE IF EXISTS `shiftdetail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `shiftdetail` (
-  `doctorid` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `doctorid` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `dayofweek` int NOT NULL,
   `shiftid` int NOT NULL,
   PRIMARY KEY (`doctorid`,`shiftid`,`dayofweek`),
@@ -327,4 +329,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-05-07 16:08:05
+-- Dump completed on 2022-02-26 13:53:40

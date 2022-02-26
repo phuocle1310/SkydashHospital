@@ -15,7 +15,7 @@ public class LoginController {
     private BCryptPasswordEncoder encoder;
     @RequestMapping()
     public String login() {
-//        System.out.println(encoder.encode("123"));
+        System.out.println(encoder.encode("123"));
         return "login";
     }
 }

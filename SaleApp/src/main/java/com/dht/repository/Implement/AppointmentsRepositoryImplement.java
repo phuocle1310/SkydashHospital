@@ -6,6 +6,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,7 +19,8 @@ public class AppointmentsRepositoryImplement implements IAppointmentsRepository 
 
     @Autowired
     private LocalSessionFactoryBean sessionFactory;
-
+//    @Autowired
+//    public BCryptPasswordEncoder passwordEncoder;
     private Session currentSession() {
         return sessionFactory.getObject().getCurrentSession();
     }
@@ -54,6 +56,7 @@ public class AppointmentsRepositoryImplement implements IAppointmentsRepository 
     @Transactional
     public boolean addAppointment(Appointment appoinment) {
         try {
+//            System.out.println(passwordEncoder.encode("123"));
             currentSession().save(appoinment);
             return true;
         } catch (HibernateException ex) {
